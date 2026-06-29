@@ -1,0 +1,441 @@
+import type { Messages } from '../types'
+
+const nl: Messages = {
+  meta: {
+    title: 'VistaRemote — Open-source WebRTC-bureaublad op afstand · Zelfgehoste AI-inzichten',
+    description:
+      'Cross-platform realtime bureaublad op afstand. Sessie-opname, AI-samenvattingen, auditlogs — open source en volledig zelf te hosten. Gebouwd voor industriële pc\'s, edge-gateways en IT-bureaubladen.',
+  },
+  common: {
+    skipToContent: 'Ga naar hoofdinhoud',
+    backToTop: 'Terug naar boven',
+    copy: 'Kopiëren',
+    copied: 'Gekopieerd',
+    brandSubtitle: 'VistaRemote',
+    luminaryBadge: 'LuminaryWorks · VistaRemote · Control',
+    sharedCodeLabel: 'Gedeelde code-laag',
+    sharedCodeDesc:
+      'Alle vier platformen delen dezelfde TypeScript-typen, Zod-schema\'s en business hooks. Electron drijft Desktop + Web aan; React Native drijft Android + iOS aan. Eén keer bouwen, overal uitrollen.',
+    mitLicense: 'MIT License',
+    footerTagline: 'Data blijft on-prem · 100% zelfgehost · Audit-klaar',
+    partOf: 'Onderdeel van',
+  },
+  header: {
+    homeAria: 'VistaRemote startpagina',
+    navAria: 'Hoofdnavigatie',
+    mobileNavAria: 'Mobiele navigatie',
+    toggleLangAria: 'Taal wijzigen',
+    menuAria: 'Menu',
+    signIn: 'Inloggen',
+    signInTooltip: 'Inloggen op console',
+    nav: {
+      capabilities: 'Mogelijkheden',
+      multiplatform: 'Multiplatform',
+      architecture: 'Architectuur',
+      ecosystem: 'Ecosysteem',
+      docs: 'Documentatie',
+    },
+  },
+  footer: {
+    tagline:
+      'Open-source WebRTC-bureaublad op afstand met zelfgehoste AI-sessie-inzichten. Gebouwd voor industriële operaties, IT-ondersteuning en compliance-audits.',
+    product: 'Product',
+    resources: 'Bronnen',
+    ecosystem: 'Ecosysteem',
+    links: {
+      capabilities: 'Mogelijkheden',
+      multiplatform: 'Multiplatform',
+      plugins: 'Plugin-architectuur',
+      architecture: 'Architectuur',
+      devDocs: 'Ontwikkelaarsdocumentatie',
+      pluginSdk: 'Plugin SDK',
+      apiRef: 'API-referentie',
+      changelog: 'Wijzigingslogboek',
+      docs: 'Documentatie',
+    },
+  },
+  hero: {
+    title: 'Bereik het veld op afstand. Houd inzichten in uw datacenter.',
+    titleEn: 'WebRTC Remote Control + Self-Hosted AI Audit',
+    desc: 'Cross-platform realtime bureaublad op afstand en apparaatovername. WebRTC ultralage latentie gecombineerd met LLM-gestuurde sessie-opname, AI-samenvattingen en auditlogs. 100% zelfgehost. Gebouwd voor industriële pc\'s, edge-gateways en IT-bureaubladoperaties.',
+    ctaPrimary: 'Snelle startimplementatie',
+    ctaSecondary: 'Ontwikkelaars- en plugindocumentatie',
+    stats: [
+      { v: '42ms', l: 'Min. latentie' },
+      { v: '100%', l: 'Zelfgehost' },
+      { v: 'Multiplatform', l: 'Web · Desktop · iOS · Android' },
+      { v: 'MIT', l: 'Open source' },
+    ],
+    mockAria: 'Gesimuleerde UI voor externe sessie',
+    tags: ['WebRTC 42ms', 'Opname', 'AES-256 versleuteld', 'Meerdere apparaten'],
+  },
+  scenarios: {
+    eyebrow: 'Gebruiksscenario\'s',
+    title: 'Gebouwd voor hoogwaardige operaties en assistentie',
+    subtitle:
+      'Gericht op enterprise-controle en compliance-audits. We proberen niet alles te zijn — we excelleren in wat ertoe doet.',
+    cards: [
+      {
+        title: 'Industriële / edge-operaties',
+        desc: 'Firmware-debugging en apparaatonderhoud zonder fysieke afstandsbeperkingen. Neem op afstand industriële pc\'s en edge-gateways over.',
+        tags: ['Industriële controle', 'Edge computing'],
+      },
+      {
+        title: 'Beheerde IT-dienstverleners',
+        desc: 'Bureaublad op afstand voor klanten met snellere probleemoplossing. Vervang ter plaatse dispatch door één link.',
+        tags: ['IT-diensten', 'Bureaubladondersteuning'],
+      },
+      {
+        title: 'Strikte compliance en zelfhosting',
+        desc: 'Data en logs verlaten nooit uw netwerk. Voldoe aan financiële en overheidsauditvereisten. Zelfgehoste TURN, geen publieke relay.',
+        tags: ['Financiële compliance', 'On-prem'],
+      },
+      {
+        title: 'AI-sessie-inzichten',
+        desc: 'Automatisch gegenereerde opnamesamenvattingen, anomaliedetectie en operationele efficiëntierapporten. AI draait offline — data verlaat nooit het netwerk.',
+        tags: ['AI-analyse', 'Auditrapporten'],
+      },
+    ],
+    notFitLabel: 'Niet geschikt voor',
+    notFitBold: 'Massale livestreaming met miljoenen gelijktijdige kijkers, wereldwijd CDN-entertainment',
+    notFitRest:
+      '— VistaRemote richt zich op laag-latente bidirectionele controle en compliance-audits, niet op grootschalige eenrichtingsstreaming. Gebruik een dedicated streamingdistributie-oplossing.',
+  },
+  capabilities: {
+    eyebrow: 'Kernmogelijkheden',
+    title: 'Een console die alles bestuurt',
+    subtitle:
+      'Van milliseconde-transport tot AI-sessie-inzichten tot compliance-auditloops — drie dimensies die enterprise remote operations dekken.',
+    tabs: { realtime: 'Realtime controle', audit: 'Opname en AI', management: 'Uniform beheer' },
+    realtime: {
+      conn: {
+        title: 'Verbinding en protocol',
+        items: [
+          'WebRTC milliseconde-latentie bureaublad op afstand met DTLS-versleutelde signalering',
+          'Zelfgehoste TURN-server, LAN eerst met publieke fallback, >99% verbindingsucces',
+          'H.264 / H.265 / VP8 adaptieve codecs met NVENC / VAAPI hardwareversnelling',
+          '60fps hoge framerate, muis- en toetsenbordinjectie zonder vertraging',
+        ],
+        tags: ['WebRTC', 'DTLS', 'TURN', 'NVENC', 'H.265'],
+      },
+      control: {
+        title: 'Controlemogelijkheden',
+        items: [
+          'Volledige toetsenbordmapping en sneltoetsinterceptie, snelkoppelingen op systeemniveau (Electron)',
+          'Onafhankelijke mapping van meerdere monitoren, naadloze streamwisseling',
+          'Bidirectionele bestandsoverdracht, upload via slepen en neerzetten',
+          'Klembordsynchronisatie en tekstplakinjectie',
+        ],
+        tags: ['Meerdere monitoren', 'Bestandsoverdracht', 'Klembord', 'Electron'],
+      },
+    },
+    audit: {
+      record: {
+        title: 'Opname en opslag',
+        items: [
+          'HD-sessie-opname in MP4 / WebM, zelfgehoste offline opslag',
+          'Tijdgesegmenteerde opslag om te grote bestanden te voorkomen, S3-compatibele objectopslag',
+          'Gestructureerde opnamemetadata voor zoeken en navigeren op secondeniveau',
+        ],
+        tags: ['MP4', 'S3-compatibel', 'Gesegmenteerd', 'Offline opslag'],
+      },
+      ai: {
+        title: 'AI-samenvattingen en waarschuwingen',
+        items: [
+          'Asynchrone pipeline via BullMQ + zelfgehoste LLM (Ollama)',
+          'Slimme samenvattingen blijven on-prem — LLM draait in uw datacenter',
+          'Anomaliedetectie (per ongeluk DB verwijderen, kernprocessen beëindigen) met waarschuwingen op secondeniveau',
+          'Sessiesamenvattingen automatisch naar ticketing geschreven (uitbreidbaar via Workflow-plugins)',
+        ],
+        tags: ['BullMQ', 'Ollama', 'Offline LLM', 'Anomaliedetectie'],
+      },
+    },
+    management: {
+      device: {
+        title: 'Apparaat- en sessiebeheer',
+        items: [
+          'Koppelcode-mechanisme — geen vast IP, zero-config onboarding',
+          'Gedwongen sessiebeëindiging, specifieke toetsen blokkeren, veilige rijmodus',
+          'Gedetailleerde auditlogs — elke toetsaanslag en klik traceerbaar',
+        ],
+        tags: ['Koppelcode', 'Auditlogs', 'Sessiecontrole', 'Zero-config'],
+      },
+      auth: {
+        title: 'Rechten en SSO',
+        items: [
+          'RBAC tot alleen-lezen scherm of volledige controle',
+          'Native LuminaryWorks OIDC single sign-on',
+          'Multi-tenant isolatie met namespaces en auditdomeinen per klant',
+        ],
+        tags: ['RBAC', 'OIDC', 'SSO', 'Multi-tenant'],
+      },
+    },
+  },
+  multiplatform: {
+    eyebrow: 'Vier platformen, één codebase',
+    title: 'Electron + React Native — één code, vier platformen',
+    subtitle:
+      'Electron en React Native dual runtimes die Web, Desktop, Android en iOS dekken. Gedeelde TypeScript business layer en UI-componenten — geen dubbele ontwikkeling.',
+    platforms: [
+      {
+        name: 'Web Client',
+        label: 'browser · zero-install',
+        desc: 'Lichtgewicht console zonder installatie. Open een browser en verbind — geen lokale app nodig. Ideaal voor ad-hoc ondersteuning en tijdelijke operaties.',
+        tags: ['React', 'WebRTC', 'PWA'],
+        feats: ['Starten zonder installatie', 'Responsief ontwerp', 'Meerdere vensters', 'Web Share API'],
+      },
+      {
+        name: 'Desktop',
+        label: 'Electron · cross-platform',
+        desc: 'Diepgaande immersieve controle. Sneltoetsinterceptie op systeemniveau (Ctrl/Cmd + Alt), meerdere schermen mapping, bestandsoverdracht via slepen en neerzetten. Gebouwd voor langetermijn operations engineers.',
+        tags: ['Electron', 'Node.js', 'DXGI'],
+        feats: ['Sneltoetsinterceptie', 'Meerdere schermen', 'Lokaal klembord', 'Offline sessiecache'],
+      },
+      {
+        name: 'Mobile',
+        label: 'React Native · iOS & Android',
+        desc: 'Mobiele controle voor veldtechnici. Behandel apparaatwaarschuwingen vanaf uw telefoon met aanraakgebaren die naar externe muisacties worden gemapt.',
+        tags: ['React Native', 'Expo', 'WebRTC'],
+        feats: ['Aanraakgebaar-mapping', 'Oriëntatie-adaptief', 'Push-wake overname', 'Biometrische auth'],
+      },
+    ],
+  },
+  plugins: {
+    eyebrow: 'Plugin-architectuur',
+    title: 'Breid remote mogelijkheden uit als puzzelstukken',
+    subtitle:
+      'Remote control is meer dan kijken en klikken. Onze plugin-architectuur ontkoppelt streaming van businesslogica met drie extensielagen.',
+    pipeline: ['Streaming-kern', 'UI Plugins', 'Workflow Plugins', 'AI Plugins', 'Audit-output'],
+    pipelineAria: 'Plugin-pipeline: UI → Workflow → AI-analyse',
+    items: [
+      {
+        type: 'UI Plugins',
+        title: 'Interactielaag',
+        desc: 'Laad dynamisch apparaatspecifieke bedieningspanelen. Door de community gebouwde virtuele gamepads, PLC-consoles, industriële dashboards — geen kernwijzigingen nodig.',
+        examples: ['Virtuele gamepad', 'PLC-console', 'HMI-dashboard', 'Touch-toetsenbord'],
+      },
+      {
+        type: 'Workflow Plugins',
+        title: 'Workflow-laag',
+        desc: 'Koppel aan bestaande enterprisesystemen. Hot-swap Jira/Lark goedkeuringsflows, koppelingsauth, aangepaste online/offline hooks — naadloze integratie.',
+        examples: ['Jira-integratie', 'Lark-goedkeuring', 'Koppelingsauth', 'Sessie-hooks'],
+      },
+      {
+        type: 'AI Plugins',
+        title: 'Analyselaag',
+        desc: 'Koppel aangepaste analysemodellen aan sessiestreams. Gevoelige acties (DB verwijderen, kernprocessen beëindigen) activeren waarschuwingen op secondeniveau. Breng uw eigen LLM mee.',
+        examples: ['Realtime waarschuwingen', 'Sessiesamenvattingen', 'Anomalie-tagging', 'Compliance-export'],
+      },
+    ],
+    registryTitle: 'Open plugin-register',
+    registryDesc:
+      'Alle plugins registreren via @vistaremote/plugin-sdk met hot reload — geen herstart van het hoofdproces. Community-plugins staan in de officiële marketplace.',
+  },
+  architecture: {
+    eyebrow: 'Geek-architectuur',
+    title: 'Full-stack TypeScript + chirurgisch Rust',
+    subtitle:
+      'Maximale uniformiteit, geen polyglot Frankenstein. Laat AI (Vibe Coding) uw beste co-piloot zijn voor maatwerk.',
+    vibeTitle: 'Vibe Coding-vriendelijk',
+    vibeDesc:
+      'End-to-end TypeScript met sterke types. AI-IDE\'s (Copilot/Cursor) krijgen duidelijke context — LLM-ondersteunde ontwikkeling slaagt veel vaker dan in meertalige projecten.',
+    layers: [
+      {
+        name: 'Gedeelde contracten',
+        en: 'shared · contracts',
+        desc: 'Strikte front/back type sharing via Zod. Alle API request/response-vormen, entiteiten en enums hier gedefinieerd — volledige TypeScript-inferentie.',
+        tags: ['Zod', 'TypeScript', 'monorepo'],
+      },
+      {
+        name: 'Server-signalering',
+        en: 'server · signaling & api',
+        desc: 'NestJS levert betrouwbare REST API\'s en WebRTC-signaleringroutes. Modulaire architectuur — elk domein heeft eigen module/controller/service.',
+        tags: ['NestJS', 'WebSocket', 'Redis Pub/Sub'],
+      },
+      {
+        name: 'Client business layer',
+        en: 'client · react / rn / electron',
+        desc: 'React / React Native / Electron delen business hooks en state. UI verschilt; kernlogica is zero-duplicatie. >70% code-hergebruik.',
+        tags: ['React', 'React Native', 'Electron', 'Zustand'],
+      },
+      {
+        name: 'Rust performance layer',
+        en: 'rust · codec & capture',
+        desc: 'Rust alleen op hot paths: DXGI/NVENC schermcapture en codecs. TypeScript roept Rust aan via napi-rs — piekprestaties zonder vervuiling van de hoofdcodebase.',
+        tags: ['Rust', 'DXGI', 'NVENC', 'napi-rs'],
+      },
+      {
+        name: 'AI Worker layer',
+        en: 'worker · ai & queue',
+        desc: 'BullMQ async queue voor sessie-opname en AI-samenvattingstaken. Docker Compose one-click Ollama — private LLM offline, data blijft in het rack.',
+        tags: ['BullMQ', 'Ollama', 'Docker Compose', 'LLM'],
+      },
+    ],
+  },
+  comparison: {
+    eyebrow: 'Ecosysteemsynergie',
+    title: 'Naast elkaar: VistaRemote',
+    titleControl: 'Control',
+    titleView: 'View',
+    subtitle:
+      'Duidelijke taakverdeling, gesloten loop samen. VistaCast detecteert anomalieën; VistaRemote voert interventie uit.',
+    flowAria: 'VistaCast-waarschuwing → VistaRemote-overnameflow',
+    flow: [
+      { label: 'VistaCast', sub: 'Hoogrisicogedrag gedetecteerd' },
+      { label: '→', sub: '' },
+      { label: 'AI-gelaagde waarschuwing', sub: 'Ernst P1' },
+      { label: '→', sub: '' },
+      { label: 'VistaRemote', sub: 'Menselijke overname activeren' },
+      { label: '→', sub: '' },
+      { label: 'Gesloten loop', sub: 'Auditlog gearchiveerd' },
+    ],
+    colDim: 'Dimensie',
+    colRemote: 'VistaRemote',
+    colCast: 'VistaCast',
+    tagControl: 'Control',
+    tagView: 'View',
+    tags: {
+      bidirectional: 'Bidirectioneel',
+      unidirectional: 'Unidirectioneel',
+      receiveAlert: 'Anomalie-signaal ontvangen',
+      manualClose: 'Menselijke overname sluit de loop',
+      detectAnomaly: 'Ruimtelijke anomalie detecteren',
+      emitSignal: 'Signaal bij bron uitzenden',
+    },
+    rows: [
+      {
+        dim: 'Kernplatform',
+        vistaremote: 'Mobiele / PC-controller / Agent-endpoint',
+        vistacast: 'Vaste beveiligingscamera\'s (ONVIF / RTSP)',
+      },
+      {
+        dim: 'Kernwaarde',
+        vistaremote: 'Menselijke interventie, bidirectionele controle, opname-audit',
+        vistacast: 'AI-perceptie, gestructureerde ruimtelijke data',
+      },
+      { dim: 'Richting', vistaremote: 'bidirectional', vistacast: 'unidirectional' },
+      {
+        dim: 'Latentie',
+        vistaremote: '< 100ms vereist',
+        vistacast: 'Analyse op secondeniveau acceptabel',
+      },
+      {
+        dim: 'AI-mogelijkheid',
+        vistaremote: 'Sessiesamenvattingen, anomaliewaarschuwingen (offline LLM)',
+        vistacast: 'Objectdetectie, ruimtelijke events (edge-inferentie)',
+      },
+      {
+        dim: 'Samenwerking',
+        vistaremote: 'collab-remote',
+        vistacast: 'collab-cast',
+        highlight: true,
+      },
+      { dim: 'Zelfgehost', vistaremote: 'check', vistacast: 'check' },
+      { dim: 'Licentie', vistaremote: 'MIT', vistacast: 'MIT' },
+    ],
+  },
+  ecosystem: {
+    eyebrow: 'Ecosysteemintegratie',
+    title: 'De laatste mijl van interventie in de waardeketen',
+    subtitle:
+      'VistaRemote is de uitvoerder in LuminaryWorks — perceptiesignalen, remote layer sluit de loop.',
+    items: {
+      VistaCast: {
+        role: 'VistaCast · View',
+        trigger: 'AI-visie activeert hoogrisicowaarschuwing',
+        action: 'VistaRemote automatisch activeren voor menselijke overname',
+        desc: 'Wanneer camera\'s inbraak, brand of abnormale operaties detecteren, worden P1-waarschuwingen via event bus gepusht. VistaRemote vraagt overname en sessie met één klik.',
+      },
+      SyncroBrain: {
+        role: 'IoT-orchestratie-engine',
+        trigger: 'IoT-knooppunt anomalie',
+        action: 'Directe remote configuratie op apparaatbackend',
+        desc: 'Wanneer IoT-knooppunten temperatuur, spanning of communicatiestoringen melden, activeren SyncroBrain-workflows VistaRemote-sessies voor directe terminalreparatie.',
+      },
+      DoerFlow: {
+        role: 'Ticketing en dispatch',
+        trigger: 'Taaklevering na dispatch',
+        action: 'Bureaublad op afstand voor worker-debugging',
+        desc: 'Na taaktoewijzing starten technici VistaRemote vanuit DoerFlow. Leveringsrecords en opnames koppelen automatisch aan tickets voor volledige audittrail.',
+      },
+      DataLuminary: {
+        role: 'Datainzichten en dashboards',
+        trigger: 'Ops-rapporten en sessie-audit',
+        action: 'Globale sessieduur- en auditdashboards',
+        desc: 'Aggregeer VistaRemote-sessieduur, actiefrequentie en AI-samenvattingsconclusies in operationele efficiëntie- en compliance-dashboards voor leiderschap.',
+      },
+      BlockyEdu: {
+        role: 'Visueel educatieplatform',
+        trigger: 'WebRTC-labcursussen',
+        action: 'AI-ondersteund ontwikkelingsonderwijs',
+        desc: 'Praktische WebRTC remote control labs die custom plugin-ontwikkeling leren met VistaRemote Plugin SDK — AI helpt bij coderen en debuggen.',
+      },
+    },
+  },
+  quickstart: {
+    eyebrow: 'Snelle start',
+    title: 'Bouw nu uw lokale controlecentrum',
+    subtitle:
+      'Drie paden om uit te kiezen. Bronontwikkeling, Docker one-click deploy of plugin-ontwikkeling — alles type-safe en AI-vriendelijk.',
+    steps: [
+      { n: '01', label: 'Repository klonen en initialiseren', sub: 'git clone + ./init.sh' },
+      { n: '02', label: '.env configureren en services starten', sub: 'pnpm dev:mvp' },
+      { n: '03', label: 'Web Client openen', sub: 'localhost:3000' },
+    ],
+    tabsAria: 'Snelle start-opties',
+    tabs: { clone: 'Vanuit broncode', docker: 'Docker one-click', plugin: 'Plugin bouwen' },
+    copyAria: 'Code kopiëren',
+    code: {
+      clone: [
+        { t: 'cmt', v: '# 1. Repository klonen' },
+        { t: 'cmd', v: 'git clone https://github.com/VistaRemote/vibeCode.git' },
+        { t: 'cmd', v: 'cd vibeCode' },
+        { t: '', v: '' },
+        { t: 'cmt', v: '# 2. Initialiseren (genereert .env, start Ollama + Redis + DB)' },
+        { t: 'cmd', v: './init.ps1' },
+        { t: 'cmt', v: '# Linux / macOS:' },
+        { t: 'cmd', v: 'bash init.sh' },
+        { t: '', v: '' },
+        { t: 'cmt', v: '# 3. MVP-ontwikkelservices starten' },
+        { t: 'cmd', v: 'pnpm dev:mvp' },
+        { t: '', v: '' },
+        { t: 'cmt', v: '# Web Client →  http://localhost:3000' },
+        { t: 'cmt', v: '# Admin API  →  http://localhost:4000' },
+        { t: 'cmt', v: '# Signaling  →  ws://localhost:4001' },
+      ],
+      docker: [
+        { t: 'cmt', v: '# Productie Docker Compose one-click deploy' },
+        { t: 'cmd', v: 'git clone https://github.com/VistaRemote/vibeCode.git' },
+        { t: 'cmd', v: 'cd vibeCode' },
+        { t: '', v: '' },
+        { t: 'cmt', v: '# Omgeving configureren' },
+        { t: 'cmd', v: 'cp .env.example .env' },
+        { t: 'arg', v: '# Bewerk .env → stel TURN_SECRET, DB_PASSWORD, LLM_MODEL in' },
+        { t: '', v: '' },
+        { t: 'cmt', v: '# Alle services starten (Ollama + BullMQ Worker)' },
+        { t: 'cmd', v: 'docker compose -f docker-compose.prod.yml up -d' },
+        { t: '', v: '' },
+        { t: 'cmt', v: '# Servicestatus controleren' },
+        { t: 'cmd', v: 'docker compose ps' },
+      ],
+      plugin: [
+        { t: 'cmt', v: '# Officiële Plugin SDK-scaffold' },
+        { t: 'cmd', v: 'pnpm create @vistaremote/plugin my-plc-ui' },
+        { t: 'cmd', v: 'cd my-plc-ui' },
+        { t: '', v: '' },
+        { t: 'cmt', v: '# UI-plugin registreren' },
+        { t: 'arg', v: 'import { registerUIPlugin } from "@vistaremote/plugin-sdk"' },
+        { t: '', v: '' },
+        { t: 'arg', v: 'registerUIPlugin({' },
+        { t: 'arg', v: '  id: "my-plc-ui",' },
+        { t: 'arg', v: '  match: (device) => device.type === "PLC",' },
+        { t: 'arg', v: '  component: PLCPanel,' },
+        { t: 'arg', v: '})' },
+        { t: '', v: '' },
+        { t: 'cmd', v: 'pnpm dev   # Hot-reload in lokale VistaRemote-instantie' },
+      ],
+    },
+  },
+}
+
+export default nl

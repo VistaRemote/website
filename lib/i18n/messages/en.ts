@@ -1,0 +1,441 @@
+import type { Messages } from '../types'
+
+const en: Messages = {
+  meta: {
+    title: 'VistaRemote — Open-Source WebRTC Remote Desktop · Self-Hosted AI Insights',
+    description:
+      'Cross-platform real-time remote desktop control. Session recording, AI summaries, audit logs — open source and fully self-hostable. Built for industrial PCs, edge gateways, and IT desktops.',
+  },
+  common: {
+    skipToContent: 'Skip to main content',
+    backToTop: 'Back to top',
+    copy: 'Copy',
+    copied: 'Copied',
+    brandSubtitle: 'VistaRemote',
+    luminaryBadge: 'LuminaryWorks · VistaRemote · Control',
+    sharedCodeLabel: 'Shared code layer',
+    sharedCodeDesc:
+      'All four platforms share the same TypeScript types, Zod schemas, and business hooks. Electron powers Desktop + Web; React Native powers Android + iOS. Build once, ship everywhere.',
+    mitLicense: 'MIT License',
+    footerTagline: 'Data stays on-prem · 100% self-hosted · Audit-ready',
+    partOf: 'Part of',
+  },
+  header: {
+    homeAria: 'VistaRemote home',
+    navAria: 'Main navigation',
+    mobileNavAria: 'Mobile navigation',
+    toggleLangAria: 'Change language',
+    menuAria: 'Menu',
+    signIn: 'Sign in',
+    signInTooltip: 'Sign in to console',
+    nav: {
+      capabilities: 'Capabilities',
+      multiplatform: 'Multi-Platform',
+      architecture: 'Architecture',
+      ecosystem: 'Ecosystem',
+      docs: 'Docs',
+    },
+  },
+  footer: {
+    tagline:
+      'Open-source WebRTC remote desktop with self-hosted AI session insights. Built for industrial ops, IT support, and compliance auditing.',
+    product: 'Product',
+    resources: 'Resources',
+    ecosystem: 'Ecosystem',
+    links: {
+      capabilities: 'Capabilities',
+      multiplatform: 'Multi-Platform',
+      plugins: 'Plugin Architecture',
+      architecture: 'Architecture',
+      devDocs: 'Developer Docs',
+      pluginSdk: 'Plugin SDK',
+      apiRef: 'API Reference',
+      changelog: 'Changelog',
+      docs: 'Docs',
+    },
+  },
+  hero: {
+    title: 'Reach the field remotely. Keep insights in your data center.',
+    titleEn: 'WebRTC Remote Control + Self-Hosted AI Audit',
+    desc: 'Cross-platform real-time remote desktop and device takeover. WebRTC ultra-low latency combined with LLM-driven session recording, AI summaries, and audit logs. 100% self-hosted. Built for industrial PCs, edge gateways, and IT desktop operations.',
+    ctaPrimary: 'Quick start deployment',
+    ctaSecondary: 'Developer & plugin docs',
+    stats: [
+      { v: '42ms', l: 'Min latency' },
+      { v: '100%', l: 'Self-hosted' },
+      { v: 'Multi-platform', l: 'Web · Desktop · iOS · Android' },
+      { v: 'MIT', l: 'Open source' },
+    ],
+    mockAria: 'Remote session mock UI',
+    tags: ['WebRTC 42ms', 'Recording', 'AES-256 encrypted', 'Multi-device'],
+  },
+  scenarios: {
+    eyebrow: 'Use cases',
+    title: 'Built for high-value ops and assistance',
+    subtitle:
+      'Focused on enterprise control and compliance auditing. We do not try to be everything — we excel at what matters.',
+    cards: [
+      {
+        title: 'Industrial / edge ops',
+        desc: 'Firmware debugging and device maintenance without physical distance limits. Take over industrial PCs and edge gateways remotely.',
+        tags: ['Industrial control', 'Edge computing'],
+      },
+      {
+        title: 'Managed IT service providers',
+        desc: 'Remote desktop support for clients with faster troubleshooting. Replace on-site dispatch with a single link.',
+        tags: ['IT services', 'Desktop support'],
+      },
+      {
+        title: 'Strict compliance & self-hosting',
+        desc: 'Data and logs never leave your network. Meet financial and government audit requirements. Self-hosted TURN, zero public relay.',
+        tags: ['Financial compliance', 'On-prem'],
+      },
+      {
+        title: 'AI session insights',
+        desc: 'Auto-generated recording summaries, anomaly detection, and ops efficiency reports. AI runs offline — data never leaves.',
+        tags: ['AI analytics', 'Audit reports'],
+      },
+    ],
+    notFitLabel: 'Not a fit',
+    notFitBold: 'Mass live streaming at millions of concurrent viewers, global CDN entertainment',
+    notFitRest:
+      '— VistaRemote focuses on low-latency bidirectional control and compliance auditing, not large-scale one-way streaming. Use a dedicated streaming distribution solution instead.',
+  },
+  capabilities: {
+    eyebrow: 'Core capabilities',
+    title: 'A console that controls everything',
+    subtitle:
+      'From millisecond transport to AI session insights to compliance audit loops — three dimensions covering enterprise remote ops.',
+    tabs: { realtime: 'Real-time control', audit: 'Recording & AI', management: 'Unified management' },
+    realtime: {
+      conn: {
+        title: 'Connection & protocol',
+        items: [
+          'WebRTC millisecond-latency remote desktop with DTLS-encrypted signaling',
+          'Self-hosted TURN server, LAN-first with public fallback, >99% connection success',
+          'H.264 / H.265 / VP8 adaptive codecs with NVENC / VAAPI hardware acceleration',
+          '60fps high frame rate, zero-lag mouse and keyboard injection',
+        ],
+        tags: ['WebRTC', 'DTLS', 'TURN', 'NVENC', 'H.265'],
+      },
+      control: {
+        title: 'Control capabilities',
+        items: [
+          'Full keyboard mapping and hotkey interception, system-level shortcuts (Electron)',
+          'Multi-monitor independent mapping, seamless stream switching',
+          'Bidirectional file transfer, drag-and-drop upload',
+          'Clipboard sync and text paste injection',
+        ],
+        tags: ['Multi-monitor', 'File transfer', 'Clipboard', 'Electron'],
+      },
+    },
+    audit: {
+      record: {
+        title: 'Recording & storage',
+        items: [
+          'HD session recording in MP4 / WebM, self-hosted offline storage',
+          'Time-segmented storage to avoid oversized files, S3-compatible object storage',
+          'Structured recording metadata for second-level search and seek',
+        ],
+        tags: ['MP4', 'S3 compatible', 'Segmented', 'Offline storage'],
+      },
+      ai: {
+        title: 'AI summaries & alerts',
+        items: [
+          'Async pipeline via BullMQ + self-hosted LLM (Ollama)',
+          'Smart summaries stay on-prem — LLM runs in your data center',
+          'Anomaly detection (accidental DB drops, killing core processes) with second-level alerts',
+          'Session summaries auto-written to ticketing (extensible via Workflow plugins)',
+        ],
+        tags: ['BullMQ', 'Ollama', 'Offline LLM', 'Anomaly detection'],
+      },
+    },
+    management: {
+      device: {
+        title: 'Device & session management',
+        items: [
+          'Pairing code mechanism — no fixed IP, zero-config onboarding',
+          'Force session termination, block specific keys, safe driving mode',
+          'Granular audit logs — every keystroke and click traceable',
+        ],
+        tags: ['Pairing code', 'Audit logs', 'Session control', 'Zero-config'],
+      },
+      auth: {
+        title: 'Permissions & SSO',
+        items: [
+          'RBAC down to view-only screen or full control',
+          'Native LuminaryWorks OIDC single sign-on',
+          'Multi-tenant isolation with per-customer namespaces and audit domains',
+        ],
+        tags: ['RBAC', 'OIDC', 'SSO', 'Multi-tenant'],
+      },
+    },
+  },
+  multiplatform: {
+    eyebrow: 'Four platforms, one codebase',
+    title: 'Electron + React Native — one code, four platforms',
+    subtitle:
+      'Electron and React Native dual runtimes covering Web, Desktop, Android, and iOS. Shared TypeScript business layer and UI components — no duplicate development.',
+    platforms: [
+      {
+        name: 'Web Client',
+        label: 'browser · zero-install',
+        desc: 'Lightweight zero-install console. Open a browser and connect — no local app required. Ideal for ad-hoc support and temporary ops.',
+        tags: ['React', 'WebRTC', 'PWA'],
+        feats: ['Zero-install launch', 'Responsive layout', 'Multi-window', 'Web Share API'],
+      },
+      {
+        name: 'Desktop',
+        label: 'Electron · cross-platform',
+        desc: 'Immersive deep control. System-level hotkey interception (Ctrl/Cmd + Alt), multi-screen mapping, drag-and-drop file transfer. Built for long-term ops engineers.',
+        tags: ['Electron', 'Node.js', 'DXGI'],
+        feats: ['Hotkey intercept', 'Multi-screen', 'Local clipboard', 'Offline session cache'],
+      },
+      {
+        name: 'Mobile',
+        label: 'React Native · iOS & Android',
+        desc: 'Mobile control for field engineers. Handle device alerts from your phone with touch gestures mapped to remote mouse actions.',
+        tags: ['React Native', 'Expo', 'WebRTC'],
+        feats: ['Touch gesture mapping', 'Orientation adaptive', 'Push wake takeover', 'Biometric auth'],
+      },
+    ],
+  },
+  plugins: {
+    eyebrow: 'Plugin architecture',
+    title: 'Extend remote capabilities like puzzle pieces',
+    subtitle:
+      'Remote control is more than look and click. Our plugin architecture decouples streaming from business logic with three extension layers.',
+    pipeline: ['Streaming core', 'UI Plugins', 'Workflow Plugins', 'AI Plugins', 'Audit output'],
+    pipelineAria: 'Plugin pipeline: UI → Workflow → AI analysis',
+    items: [
+      {
+        type: 'UI Plugins',
+        title: 'Interaction layer',
+        desc: 'Dynamically load device-specific control panels. Community-built virtual gamepads, PLC consoles, industrial dashboards — no core changes required.',
+        examples: ['Virtual gamepad', 'PLC console', 'HMI dashboard', 'Touch keyboard'],
+      },
+      {
+        type: 'Workflow Plugins',
+        title: 'Workflow layer',
+        desc: 'Plug into existing enterprise systems. Hot-swap Jira/Lark approval flows, pairing auth, custom online/offline hooks — seamless integration.',
+        examples: ['Jira integration', 'Lark approval', 'Pairing auth', 'Session hooks'],
+      },
+      {
+        type: 'AI Plugins',
+        title: 'Analysis layer',
+        desc: 'Attach custom analysis models to session streams. Sensitive actions (DB drops, killing core processes) trigger second-level alerts. Bring your own LLM.',
+        examples: ['Real-time alerts', 'Session summaries', 'Anomaly tagging', 'Compliance export'],
+      },
+    ],
+    registryTitle: 'Open plugin registry',
+    registryDesc:
+      'All plugins register via @vistaremote/plugin-sdk with hot reload — no main process restart. Community plugins are listed in the official marketplace.',
+  },
+  architecture: {
+    eyebrow: 'Geek architecture',
+    title: 'Full-stack TypeScript + surgical Rust',
+    subtitle:
+      'Maximum uniformity, no polyglot Frankenstein. Let AI (Vibe Coding) be your best co-pilot for customization.',
+    vibeTitle: 'Vibe Coding friendly',
+    vibeDesc:
+      'End-to-end TypeScript with strong types. AI IDEs (Copilot/Cursor) get clear context — LLM-assisted development succeeds far more than in mixed-language projects.',
+    layers: [
+      {
+        name: 'Shared contracts',
+        en: 'shared · contracts',
+        desc: 'Strict front/back type sharing via Zod. All API request/response shapes, entities, and enums defined here — full TypeScript inference.',
+        tags: ['Zod', 'TypeScript', 'monorepo'],
+      },
+      {
+        name: 'Server signaling',
+        en: 'server · signaling & api',
+        desc: 'NestJS delivers reliable REST APIs and WebRTC signaling routes. Modular architecture — each domain has its own module/controller/service.',
+        tags: ['NestJS', 'WebSocket', 'Redis Pub/Sub'],
+      },
+      {
+        name: 'Client business layer',
+        en: 'client · react / rn / electron',
+        desc: 'React / React Native / Electron share business hooks and state. UI differs; core logic is zero-duplication. >70% code reuse.',
+        tags: ['React', 'React Native', 'Electron', 'Zustand'],
+      },
+      {
+        name: 'Rust performance layer',
+        en: 'rust · codec & capture',
+        desc: 'Rust only on hot paths: DXGI/NVENC screen capture and codecs. TypeScript calls Rust via napi-rs — peak performance without polluting the main codebase.',
+        tags: ['Rust', 'DXGI', 'NVENC', 'napi-rs'],
+      },
+      {
+        name: 'AI Worker layer',
+        en: 'worker · ai & queue',
+        desc: 'BullMQ async queue for session recording and AI summary jobs. Docker Compose one-click Ollama — private LLM offline, data stays in the rack.',
+        tags: ['BullMQ', 'Ollama', 'Docker Compose', 'LLM'],
+      },
+    ],
+  },
+  comparison: {
+    eyebrow: 'Ecosystem synergy',
+    title: 'Side by side: VistaRemote',
+    titleControl: 'Control',
+    titleView: 'View',
+    subtitle:
+      'Clear division of labor, closed loop together. VistaCast detects anomalies; VistaRemote executes intervention.',
+    flowAria: 'VistaCast alert → VistaRemote takeover flow',
+    flow: [
+      { label: 'VistaCast', sub: 'High-risk behavior detected' },
+      { label: '→', sub: '' },
+      { label: 'AI tiered alert', sub: 'Severity P1' },
+      { label: '→', sub: '' },
+      { label: 'VistaRemote', sub: 'Wake human takeover' },
+      { label: '→', sub: '' },
+      { label: 'Closed loop', sub: 'Audit log archived' },
+    ],
+    colDim: 'Dimension',
+    colRemote: 'VistaRemote',
+    colCast: 'VistaCast',
+    tagControl: 'Control',
+    tagView: 'View',
+    tags: {
+      bidirectional: 'Bidirectional',
+      unidirectional: 'Unidirectional',
+      receiveAlert: 'Receive anomaly signal',
+      manualClose: 'Human takeover closes loop',
+      detectAnomaly: 'Detect spatial anomaly',
+      emitSignal: 'Emit signal at source',
+    },
+    rows: [
+      {
+        dim: 'Core carrier',
+        vistaremote: 'Mobile / PC controller / Agent endpoint',
+        vistacast: 'Fixed security cameras (ONVIF / RTSP)',
+      },
+      {
+        dim: 'Core value',
+        vistaremote: 'Human intervention, bidirectional control, recording audit',
+        vistacast: 'AI perception, structured spatial data',
+      },
+      { dim: 'Direction', vistaremote: 'bidirectional', vistacast: 'unidirectional' },
+      {
+        dim: 'Latency',
+        vistaremote: '< 100ms required',
+        vistacast: 'Second-level analysis acceptable',
+      },
+      {
+        dim: 'AI capability',
+        vistaremote: 'Session summaries, anomaly alerts (offline LLM)',
+        vistacast: 'Object detection, spatial events (edge inference)',
+      },
+      {
+        dim: 'Collaboration',
+        vistaremote: 'collab-remote',
+        vistacast: 'collab-cast',
+        highlight: true,
+      },
+      { dim: 'Self-hosted', vistaremote: 'check', vistacast: 'check' },
+      { dim: 'License', vistaremote: 'MIT', vistacast: 'MIT' },
+    ],
+  },
+  ecosystem: {
+    eyebrow: 'Ecosystem integration',
+    title: 'The last mile of intervention in the value chain',
+    subtitle:
+      'VistaRemote is the executor in LuminaryWorks — perception signals, remote layer closes the loop.',
+    items: {
+      VistaCast: {
+        role: 'VistaCast · View',
+        trigger: 'AI vision triggers high-risk alert',
+        action: 'Auto-wake VistaRemote for human takeover',
+        desc: 'When cameras detect intrusion, fire, or abnormal operations, P1 alerts push via event bus. VistaRemote prompts takeover and one-click session.',
+      },
+      SyncroBrain: {
+        role: 'IoT orchestration engine',
+        trigger: 'IoT node anomaly',
+        action: 'Direct remote config on device backend',
+        desc: 'When IoT nodes report temperature, voltage, or comm failures, SyncroBrain workflows trigger VistaRemote sessions for direct terminal repair.',
+      },
+      DoerFlow: {
+        role: 'Ticketing & dispatch',
+        trigger: 'Post-dispatch task delivery',
+        action: 'Remote desktop for worker debugging',
+        desc: 'After task assignment, technicians launch VistaRemote from DoerFlow. Delivery records and recordings auto-link to tickets for full audit trail.',
+      },
+      DataLuminary: {
+        role: 'Data insights & dashboards',
+        trigger: 'Ops reports & session audit',
+        action: 'Global session duration & audit dashboards',
+        desc: 'Aggregate VistaRemote session duration, action frequency, and AI summary conclusions into ops efficiency and compliance dashboards for leadership.',
+      },
+      BlockyEdu: {
+        role: 'Visual education platform',
+        trigger: 'WebRTC lab courses',
+        action: 'AI-assisted development teaching',
+        desc: 'Hands-on WebRTC remote control labs teaching custom plugin development with VistaRemote Plugin SDK — AI assists coding and debugging.',
+      },
+    },
+  },
+  quickstart: {
+    eyebrow: 'Quick start',
+    title: 'Build your local control center now',
+    subtitle:
+      'Three paths to choose from. Source development, Docker one-click deploy, or plugin development — all type-safe and AI-friendly.',
+    steps: [
+      { n: '01', label: 'Clone repo and initialize', sub: 'git clone + ./init.sh' },
+      { n: '02', label: 'Configure .env and start services', sub: 'pnpm dev:mvp' },
+      { n: '03', label: 'Open Web Client', sub: 'localhost:3000' },
+    ],
+    tabsAria: 'Quick start options',
+    tabs: { clone: 'From source', docker: 'Docker one-click', plugin: 'Build a plugin' },
+    copyAria: 'Copy code',
+    code: {
+      clone: [
+        { t: 'cmt', v: '# 1. Clone repository' },
+        { t: 'cmd', v: 'git clone https://github.com/VistaRemote/vibeCode.git' },
+        { t: 'cmd', v: 'cd vibeCode' },
+        { t: '', v: '' },
+        { t: 'cmt', v: '# 2. Initialize (generates .env, starts Ollama + Redis + DB)' },
+        { t: 'cmd', v: './init.ps1' },
+        { t: 'cmt', v: '# Linux / macOS:' },
+        { t: 'cmd', v: 'bash init.sh' },
+        { t: '', v: '' },
+        { t: 'cmt', v: '# 3. Start MVP dev services' },
+        { t: 'cmd', v: 'pnpm dev:mvp' },
+        { t: '', v: '' },
+        { t: 'cmt', v: '# Web Client →  http://localhost:3000' },
+        { t: 'cmt', v: '# Admin API  →  http://localhost:4000' },
+        { t: 'cmt', v: '# Signaling  →  ws://localhost:4001' },
+      ],
+      docker: [
+        { t: 'cmt', v: '# Production Docker Compose one-click deploy' },
+        { t: 'cmd', v: 'git clone https://github.com/VistaRemote/vibeCode.git' },
+        { t: 'cmd', v: 'cd vibeCode' },
+        { t: '', v: '' },
+        { t: 'cmt', v: '# Configure environment' },
+        { t: 'cmd', v: 'cp .env.example .env' },
+        { t: 'arg', v: '# Edit .env → set TURN_SECRET, DB_PASSWORD, LLM_MODEL' },
+        { t: '', v: '' },
+        { t: 'cmt', v: '# Start all services (Ollama + BullMQ Worker)' },
+        { t: 'cmd', v: 'docker compose -f docker-compose.prod.yml up -d' },
+        { t: '', v: '' },
+        { t: 'cmt', v: '# Check service status' },
+        { t: 'cmd', v: 'docker compose ps' },
+      ],
+      plugin: [
+        { t: 'cmt', v: '# Official Plugin SDK scaffold' },
+        { t: 'cmd', v: 'pnpm create @vistaremote/plugin my-plc-ui' },
+        { t: 'cmd', v: 'cd my-plc-ui' },
+        { t: '', v: '' },
+        { t: 'cmt', v: '# Register UI plugin' },
+        { t: 'arg', v: 'import { registerUIPlugin } from "@vistaremote/plugin-sdk"' },
+        { t: '', v: '' },
+        { t: 'arg', v: 'registerUIPlugin({' },
+        { t: 'arg', v: '  id: "my-plc-ui",' },
+        { t: 'arg', v: '  match: (device) => device.type === "PLC",' },
+        { t: 'arg', v: '  component: PLCPanel,' },
+        { t: 'arg', v: '})' },
+        { t: '', v: '' },
+        { t: 'cmd', v: 'pnpm dev   # Hot-reload into local VistaRemote instance' },
+      ],
+    },
+  },
+}
+
+export default en

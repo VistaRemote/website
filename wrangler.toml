@@ -1,0 +1,6 @@
+# Cloudflare Pages — VistaRemote marketing site (static export)
+# https://developers.cloudflare.com/pages/functions/wrangler-configuration/
+
+name = "vistaremote-website"
+pages_build_output_dir = "out"
+compatibility_date = "2026-06-28"
