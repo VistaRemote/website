@@ -16,7 +16,7 @@ const zhCN: Messages = {
     sharedCodeLabel: '共享代码层',
     sharedCodeDesc:
       '四端共用同一套 TypeScript 类型定义、Zod Schema、业务逻辑 hooks，Electron 负责 Desktop + Web，React Native 负责 Android + iOS。新功能一次开发，四端同步上线。',
-    mitLicense: 'MIT License',
+    mitLicense: 'Polyform Noncommercial License',
     footerTagline: '数据不出网 · 100% 私有化部署 · 合规审计友好',
     partOf: 'Part of',
   },
@@ -63,7 +63,7 @@ const zhCN: Messages = {
       { v: '42ms', l: '最低延迟' },
       { v: '100%', l: '私有化部署' },
       { v: '多端兼容', l: 'Web · Desktop · iOS · Android' },
-      { v: 'MIT', l: '开源协议' },
+      { v: 'Polyform-NC', l: '开源协议' },
     ],
     mockAria: '远程会话模拟界面',
     tags: ['WebRTC 延迟 42ms', '会话录制中', 'AES-256 加密', '多端协同'],
@@ -330,7 +330,7 @@ const zhCN: Messages = {
         highlight: true,
       },
       { dim: '私有化部署', vistaremote: 'check', vistacast: 'check' },
-      { dim: '开源协议', vistaremote: 'MIT', vistacast: 'MIT' },
+      { dim: '开源协议', vistaremote: 'Polyform-NC', vistacast: 'Polyform-NC' },
     ],
   },
   ecosystem: {

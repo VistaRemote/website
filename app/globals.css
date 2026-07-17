@@ -249,11 +249,14 @@ body {
   border-radius: var(--r-lg);
   padding: 20px 20px 18px;
   transition: border-color 0.2s, transform 0.2s;
-  cursor: default;
+  cursor: pointer;
 }
 .eco-card:hover {
   border-color: var(--c-primary);
   transform: translateY(-2px);
+}
+.eco-card:hover .eco-card-name {
+  color: var(--c-primary);
 }
 .eco-card-name {
   font-size: 14px;

@@ -2,10 +2,11 @@
   "name": "@vistaremote/website",
   "version": "0.1.0",
   "private": true,
+  "license": "Polyform-Noncommercial-1.0.0",
   "scripts": {
     "dev": "next dev -p 13106",
     "build": "next build",
-    "pages:deploy": "wrangler pages deploy out --project-name=vistaremote-website",
+    "pages:deploy": "wrangler pages deploy out --project-name=vistaremote-website --branch=master --commit-dirty=true",
     "lint": "eslint ."
   },
   "engines": {
@@ -14,7 +15,6 @@
   "dependencies": {
     "@ant-design/icons": "^6.3.1",
     "@base-ui/react": "^1.5.0",
-    "@vercel/analytics": "1.6.1",
     "antd": "^6.4.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -27,14 +27,14 @@
     "tw-animate-css": "^1.4.0"
   },
   "devDependencies": {
-    "wrangler": "^4.26.0",
     "@tailwindcss/postcss": "^4.2.0",
     "@types/node": "^24",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "postcss": "^8.5",
     "tailwindcss": "^4.2.0",
-    "typescript": "5.7.3"
+    "typescript": "5.7.3",
+    "wrangler": "^4.26.0"
   },
   "pnpm": {
     "overrides": {

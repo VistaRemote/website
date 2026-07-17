@@ -37,10 +37,10 @@ export default function SiteFooter() {
     {
       title: f.ecosystem,
       items: [
-        { label: 'VistaCast', href: '#' },
-        { label: 'SyncroBrain', href: '#' },
-        { label: 'DoerFlow', href: '#' },
-        { label: 'LuminaryWorks', href: '#' },
+        { label: 'VistaCast', href: 'https://vistacast.dev' },
+        { label: 'SyncroBrain', href: 'https://syncrobrain.com' },
+        { label: 'DoerFlow', href: 'https://doerflow.dev' },
+        { label: 'LuminaryWorks', href: 'https://luminaryworks.dev' },
       ],
     },
   ]
@@ -77,7 +77,12 @@ export default function SiteFooter() {
             <p style={{ fontSize: 13, color: '#8b949e', lineHeight: 1.7, maxWidth: 260 }}>{f.tagline}</p>
             <p style={{ fontSize: 12, color: '#4a5568', marginTop: 10 }}>
               {m.common.partOf}{' '}
-              <a href="#" style={{ color: '#8b949e', textDecoration: 'none' }}>
+              <a
+                href="https://luminaryworks.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#8b949e', textDecoration: 'none' }}
+              >
                 LuminaryWorks
               </a>{' '}
               · 「控」
@@ -136,6 +141,9 @@ export default function SiteFooter() {
                   <li key={item.label}>
                     <a
                       href={item.href}
+                      {...(item.href.startsWith('http')
+                        ? { target: '_blank', rel: 'noopener noreferrer' }
+                        : {})}
                       style={{
                         fontSize: 13,
                         color: '#8b949e',
@@ -171,7 +179,12 @@ export default function SiteFooter() {
         >
           <p style={{ fontSize: 12, color: '#4a5568' }}>
             © {new Date().getFullYear()} LuminaryWorks. Released under the{' '}
-            <a href="#" style={{ color: '#8b949e', textDecoration: 'none' }}>
+            <a
+              href="https://polyformproject.org/licenses/noncommercial/1.0.0"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#8b949e', textDecoration: 'none' }}
+            >
               {m.common.mitLicense}
             </a>
             .

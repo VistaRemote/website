@@ -21,6 +21,7 @@ const NAV_KEYS = [
   'ecosystem',
   'docs',
 ] as const
+const loginUrl = 'https://admin.vistacast.dev/'
 
 export default function SiteHeader() {
   const { locale, setLocale, m, config } = useLocale()
@@ -189,6 +190,9 @@ export default function SiteHeader() {
               icon={<UserOutlined />}
               size="small"
               style={{ borderRadius: 6, fontSize: 13 }}
+              href={loginUrl}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {m.header.signIn}
             </Button>

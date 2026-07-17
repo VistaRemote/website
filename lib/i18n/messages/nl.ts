@@ -16,7 +16,7 @@ const nl: Messages = {
     sharedCodeLabel: 'Gedeelde code-laag',
     sharedCodeDesc:
       'Alle vier platformen delen dezelfde TypeScript-typen, Zod-schema\'s en business hooks. Electron drijft Desktop + Web aan; React Native drijft Android + iOS aan. Eén keer bouwen, overal uitrollen.',
-    mitLicense: 'MIT License',
+    mitLicense: 'Polyform Noncommercial License',
     footerTagline: 'Data blijft on-prem · 100% zelfgehost · Audit-klaar',
     partOf: 'Onderdeel van',
   },
@@ -64,7 +64,7 @@ const nl: Messages = {
       { v: '42ms', l: 'Min. latentie' },
       { v: '100%', l: 'Zelfgehost' },
       { v: 'Multiplatform', l: 'Web · Desktop · iOS · Android' },
-      { v: 'MIT', l: 'Open source' },
+      { v: 'Polyform-NC', l: 'Open source' },
     ],
     mockAria: 'Gesimuleerde UI voor externe sessie',
     tags: ['WebRTC 42ms', 'Opname', 'AES-256 versleuteld', 'Meerdere apparaten'],
@@ -331,7 +331,7 @@ const nl: Messages = {
         highlight: true,
       },
       { dim: 'Zelfgehost', vistaremote: 'check', vistacast: 'check' },
-      { dim: 'Licentie', vistaremote: 'MIT', vistacast: 'MIT' },
+      { dim: 'Licentie', vistaremote: 'Polyform-NC', vistacast: 'Polyform-NC' },
     ],
   },
   ecosystem: {

@@ -45,8 +45,8 @@ function renderCell(
     return (
       <span style={{ color: '#00d296', fontFamily: 'var(--font-mono)', fontSize: 13 }}>{value}</span>
     )
-  if (value === 'MIT')
-    return <span style={{ color: '#c9d1d9', fontFamily: 'var(--font-mono)', fontSize: 12 }}>MIT</span>
+  if (value === 'Polyform-NC')
+    return <span style={{ color: '#c9d1d9', fontFamily: 'var(--font-mono)', fontSize: 12 }}>{value}</span>
   return <span style={{ color: '#c9d1d9' }}>{value}</span>
 }
 

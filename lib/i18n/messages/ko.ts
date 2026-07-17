@@ -16,7 +16,7 @@ const ko: Messages = {
     sharedCodeLabel: '공유 코드 레이어',
     sharedCodeDesc:
       '네 플랫폼 모두 동일한 TypeScript 타입, Zod 스키마, 비즈니스 훅을 공유합니다. Electron이 Desktop + Web을, React Native가 Android + iOS를 담당합니다. 한 번 개발하고 어디서나 배포하세요.',
-    mitLicense: 'MIT License',
+    mitLicense: 'Polyform Noncommercial License',
     footerTagline: '데이터는 온프레미스 · 100% 셀프호스팅 · 감사 대응',
     partOf: 'Part of',
   },
@@ -64,7 +64,7 @@ const ko: Messages = {
       { v: '42ms', l: '최소 지연' },
       { v: '100%', l: '셀프호스팅' },
       { v: '멀티 플랫폼', l: 'Web · Desktop · iOS · Android' },
-      { v: 'MIT', l: '오픈소스' },
+      { v: 'Polyform-NC', l: '오픈소스' },
     ],
     mockAria: '원격 세션 모의 UI',
     tags: ['WebRTC 42ms', '녹화 중', 'AES-256 암호화', '멀티 디바이스'],
@@ -331,7 +331,7 @@ const ko: Messages = {
         highlight: true,
       },
       { dim: '셀프호스팅', vistaremote: 'check', vistacast: 'check' },
-      { dim: '라이선스', vistaremote: 'MIT', vistacast: 'MIT' },
+      { dim: '라이선스', vistaremote: 'Polyform-NC', vistacast: 'Polyform-NC' },
     ],
   },
   ecosystem: {

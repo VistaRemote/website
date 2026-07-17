@@ -5,6 +5,13 @@ import { ShareAltOutlined, ArrowRightOutlined } from '@ant-design/icons'
 import { useLocale } from '@/lib/i18n'
 
 const ECO_NAMES = ['VistaCast', 'SyncroBrain', 'DoerFlow', 'DataLuminary', 'BlockyEdu'] as const
+const ECO_URLS: Record<(typeof ECO_NAMES)[number], string> = {
+  VistaCast: 'https://vistacast.dev',
+  SyncroBrain: 'https://syncrobrain.com',
+  DoerFlow: 'https://doerflow.dev',
+  DataLuminary: 'https://dataluminary.dev',
+  BlockyEdu: 'https://blockyedu.com',
+}
 const ECO_COLORS = ['#f5a623', '#00d296', '#1677ff', '#79c0ff', '#7b5cf0']
 const ECO_RGBS = ['245,166,35', '0,210,150', '22,119,255', '121,192,255', '123,92,240']
 
@@ -53,7 +60,14 @@ export default function EcosystemSection() {
                   }}
                   aria-hidden="true"
                 />
-                <span style={{ fontSize: 13, color: '#c9d1d9', fontWeight: 500 }}>{name}</span>
+                <a
+                  href={ECO_URLS[name]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ fontSize: 13, color: '#c9d1d9', fontWeight: 500, textDecoration: 'none' }}
+                >
+                  {name}
+                </a>
                 {i < ECO_NAMES.length - 1 && (
                   <ArrowRightOutlined style={{ fontSize: 10, color: '#21334a' }} aria-hidden="true" />
                 )}
@@ -69,7 +83,13 @@ export default function EcosystemSection() {
             const bgRgb = ECO_RGBS[idx]
             return (
               <Col key={name} xs={24} sm={12}>
-                <div className="eco-card" style={{ height: '100%' }}>
+                <a
+                  href={ECO_URLS[name]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="eco-card"
+                  style={{ height: '100%', display: 'block', textDecoration: 'none', color: 'inherit' }}
+                >
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
                     <div
                       style={{
@@ -140,7 +160,7 @@ export default function EcosystemSection() {
                   </div>
 
                   <p className="eco-card-desc">{item.desc}</p>
-                </div>
+                </a>
               </Col>
             )
           })}

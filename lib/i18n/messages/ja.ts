@@ -16,7 +16,7 @@ const ja: Messages = {
     sharedCodeLabel: '共有コードレイヤー',
     sharedCodeDesc:
       '4 つのプラットフォームすべてが同じ TypeScript 型、Zod スキーマ、ビジネスフックを共有。Electron が Desktop + Web を、React Native が Android + iOS を担います。一度開発すれば、どこでも展開できます。',
-    mitLicense: 'MIT License',
+    mitLicense: 'Polyform Noncommercial License',
     footerTagline: 'データはオンプレミス · 100% セルフホスト · 監査対応',
     partOf: 'Part of',
   },
@@ -64,7 +64,7 @@ const ja: Messages = {
       { v: '42ms', l: '最小遅延' },
       { v: '100%', l: 'セルフホスト' },
       { v: 'マルチプラットフォーム', l: 'Web · Desktop · iOS · Android' },
-      { v: 'MIT', l: 'オープンソース' },
+      { v: 'Polyform-NC', l: 'オープンソース' },
     ],
     mockAria: 'リモートセッションモック UI',
     tags: ['WebRTC 42ms', '録画中', 'AES-256 暗号化', 'マルチデバイス'],
@@ -331,7 +331,7 @@ const ja: Messages = {
         highlight: true,
       },
       { dim: 'セルフホスト', vistaremote: 'check', vistacast: 'check' },
-      { dim: 'ライセンス', vistaremote: 'MIT', vistacast: 'MIT' },
+      { dim: 'ライセンス', vistaremote: 'Polyform-NC', vistacast: 'Polyform-NC' },
     ],
   },
   ecosystem: {

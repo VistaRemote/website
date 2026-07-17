@@ -16,7 +16,7 @@ const es: Messages = {
     sharedCodeLabel: 'Capa de código compartido',
     sharedCodeDesc:
       'Las cuatro plataformas comparten los mismos tipos TypeScript, esquemas Zod y hooks de negocio. Electron impulsa Desktop + Web; React Native impulsa Android + iOS. Desarrolle una vez, despliegue en todas partes.',
-    mitLicense: 'MIT License',
+    mitLicense: 'Polyform Noncommercial License',
     footerTagline: 'Los datos permanecen on-prem · 100% autoalojado · Listo para auditoría',
     partOf: 'Parte de',
   },
@@ -64,7 +64,7 @@ const es: Messages = {
       { v: '42ms', l: 'Latencia mínima' },
       { v: '100%', l: 'Autoalojado' },
       { v: 'Multiplataforma', l: 'Web · Desktop · iOS · Android' },
-      { v: 'MIT', l: 'Código abierto' },
+      { v: 'Polyform-NC', l: 'Código abierto' },
     ],
     mockAria: 'Interfaz simulada de sesión remota',
     tags: ['WebRTC 42ms', 'Grabación', 'Cifrado AES-256', 'Multidispositivo'],
@@ -331,7 +331,7 @@ const es: Messages = {
         highlight: true,
       },
       { dim: 'Autoalojado', vistaremote: 'check', vistacast: 'check' },
-      { dim: 'Licencia', vistaremote: 'MIT', vistacast: 'MIT' },
+      { dim: 'Licencia', vistaremote: 'Polyform-NC', vistacast: 'Polyform-NC' },
     ],
   },
   ecosystem: {

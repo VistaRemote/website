@@ -29,7 +29,7 @@ NODE_ENV=production pnpm build
 
 ### 方式 A：GitHub Actions（推荐）
 
-推送到 `main` 后自动部署。在 `VistaRemote/website` 仓库 Settings → Secrets 配置：
+推送到 `master` 后自动部署。在 `VistaRemote/website` 仓库 Settings → Secrets 配置：
 
 | Secret | 说明 |
 | :--- | :--- |
@@ -44,7 +44,7 @@ NODE_ENV=production pnpm build
 pnpm pages:deploy
 ```
 
-需先 `npx wrangler login`。
+需先 `npx wrangler login`。脚本使用 `--branch=master`（与 Git 默认分支一致；Pages Production branch 已设为 `master`），发布到 **https://vistaremote-website.pages.dev**。
 
 ### 自定义域名
 
