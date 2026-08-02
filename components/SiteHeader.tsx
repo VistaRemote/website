@@ -184,6 +184,14 @@ export default function SiteHeader() {
             </button>
           </Dropdown>
 
+          <Button
+            size="small"
+            href="/download"
+            style={{ borderRadius: 6, fontSize: 13 }}
+          >
+            Download
+          </Button>
+
           <Tooltip title={m.header.signInTooltip}>
             <Button
               type="primary"
