@@ -19,10 +19,10 @@ export default function SiteFooter() {
     {
       title: f.product,
       items: [
-        { label: f.links.capabilities, href: '#capabilities' },
-        { label: f.links.multiplatform, href: '#multiplatform' },
-        { label: f.links.plugins, href: '#plugins' },
-        { label: f.links.architecture, href: '#architecture' },
+        { label: f.links.capabilities, href: '/#capabilities' },
+        { label: f.links.multiplatform, href: '/#multiplatform' },
+        { label: f.links.plugins, href: '/#plugins' },
+        { label: f.links.architecture, href: '/#architecture' },
       ],
     },
     {

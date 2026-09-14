@@ -37,7 +37,12 @@ export default function SiteHeader() {
   const scrollTo = (id: string) => {
     setMobileOpen(false)
     const el = document.getElementById(id)
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      return
+    }
+    // On /download (and other non-home pages) section anchors live on `/`.
+    window.location.assign(`/#${id}`)
   }
 
   const headerBg = scrolled ? 'rgba(13,17,23,0.92)' : 'rgba(13,17,23,0.6)'
@@ -71,7 +76,7 @@ export default function SiteHeader() {
         }}
       >
         <a
-          href="#"
+          href="/"
           aria-label={m.header.homeAria}
           style={{
             display: 'flex',
