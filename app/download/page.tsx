@@ -1,7 +1,14 @@
 'use client'
 
 import { ConfigProvider, theme, Button, Typography, Space, Alert } from 'antd'
-import { DownloadOutlined, AndroidOutlined, WindowsOutlined } from '@ant-design/icons'
+import {
+  DownloadOutlined,
+  AndroidOutlined,
+  WindowsOutlined,
+  AppleOutlined,
+  DesktopOutlined,
+  ControlOutlined,
+} from '@ant-design/icons'
 import Link from 'next/link'
 import { LocaleProvider, useLocale } from '@/lib/i18n'
 import SiteHeader from '@/components/SiteHeader'
@@ -17,7 +24,6 @@ const TOKEN = {
   fontFamily: "'Inter', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif",
 }
 
-/** Public binary bucket (source stays private). Override via env if needed. */
 const RELEASE_VERSION = process.env.NEXT_PUBLIC_RELEASE_VERSION ?? '1.0.0'
 const RELEASE_BASE =
   process.env.NEXT_PUBLIC_RELEASE_BASE ??
@@ -25,9 +31,19 @@ const RELEASE_BASE =
 
 const AGENT_SETUP = `${RELEASE_BASE}/VistaRemote-Agent-${RELEASE_VERSION}-win-setup.exe`
 const AGENT_PORTABLE = `${RELEASE_BASE}/VistaRemote-Agent-${RELEASE_VERSION}-win.exe`
+const AGENT_MAC = `${RELEASE_BASE}/VistaRemote-Agent-${RELEASE_VERSION}-mac.dmg`
+const VIEWER_WIN = `${RELEASE_BASE}/VistaRemote-Viewer-${RELEASE_VERSION}-win.exe`
+const VIEWER_MAC = `${RELEASE_BASE}/VistaRemote-Viewer-${RELEASE_VERSION}-mac.dmg`
 const ANDROID_APK =
   process.env.NEXT_PUBLIC_ANDROID_APK_URL ??
   `${RELEASE_BASE}/VistaRemote-${RELEASE_VERSION}.apk`
+
+const sectionStyle = {
+  background: '#161f2e',
+  border: '1px solid #21334a',
+  borderRadius: 12,
+  padding: 24,
+} as const
 
 function DownloadInner() {
   const { locale, m, config } = useLocale()
@@ -52,33 +68,25 @@ function DownloadInner() {
         </Typography.Title>
         <Typography.Paragraph style={{ color: '#8b949e', fontSize: 16 }}>
           {zh
-            ? 'v1.0 软商用：Windows Agent 安装包 / 便携版，以及 Android 主控 APK（侧载）。'
-            : 'v1.0 soft commercial: Windows Agent installer / portable, and Android controller APK (sideload).'}
+            ? 'v1.0：Agent（被控）与 Viewer（PC 主控）提供 Windows / macOS；Android 为主控侧载 APK。'
+            : 'v1.0: Agent (host) and Viewer (PC controller) for Windows / macOS; Android controller APK.'}
         </Typography.Paragraph>
         <Typography.Paragraph style={{ color: '#8b949e', fontSize: 14 }}>
           {zh ? (
             <>
-              安装包托管在公开仓库{' '}
+              安装包托管在{' '}
               <a href="https://github.com/VistaRemote/downloads/releases" style={{ color: '#1677ff' }}>
                 VistaRemote/downloads
               </a>
-              （源码仓保持私有）。也可在{' '}
-              <a href="https://github.com/VistaRemote/downloads/releases/latest" style={{ color: '#1677ff' }}>
-                GitHub Releases
-              </a>{' '}
-              直接下载。
+              （源码仓私有）。
             </>
           ) : (
             <>
-              Binaries are hosted on the public{' '}
+              Binaries on{' '}
               <a href="https://github.com/VistaRemote/downloads/releases" style={{ color: '#1677ff' }}>
                 VistaRemote/downloads
               </a>{' '}
-              repo (source stays private). Also available on{' '}
-              <a href="https://github.com/VistaRemote/downloads/releases/latest" style={{ color: '#1677ff' }}>
-                GitHub Releases
-              </a>
-              .
+              (source stays private).
             </>
           )}
         </Typography.Paragraph>
@@ -89,46 +97,54 @@ function DownloadInner() {
           style={{ marginBottom: 28 }}
           message={
             zh
-              ? '安装包暂未代码签名，Windows SmartScreen 可能提示「未知发布者」。选择「仍要运行」即可。'
-              : 'Builds are unsigned; Windows SmartScreen may warn. Choose “Run anyway”.'
+              ? '安装包未代码签名 / 未公证。Windows SmartScreen 选「仍要运行」；macOS 对 App 右键 →「打开」。'
+              : 'Unsigned / not notarized. Windows: Run anyway. macOS: right-click → Open.'
           }
         />
 
         <Space direction="vertical" size="large" style={{ width: '100%' }}>
-          <section
-            style={{
-              background: '#161f2e',
-              border: '1px solid #21334a',
-              borderRadius: 12,
-              padding: 24,
-            }}
-          >
+          <section style={sectionStyle}>
             <Typography.Title level={3} style={{ color: '#e6edf3', marginTop: 0 }}>
-              <WindowsOutlined /> {zh ? 'Windows Agent（被控端）' : 'Windows Agent (host)'}
+              <DesktopOutlined /> {zh ? 'Agent（被控端）' : 'Agent (host)'}
             </Typography.Title>
             <Typography.Paragraph style={{ color: '#8b949e' }}>
               {zh
-                ? '安装后启动，确认已配置生产 API（VISTAREMOTE_API_URL），窗口将显示配对码。'
-                : 'After install, set VISTAREMOTE_API_URL to your production API; the window shows a pairing code.'}
+                ? '安装在被远程操控的电脑上。配置 VISTAREMOTE_API_URL 后窗口显示配对码。'
+                : 'Install on the machine being controlled. Set VISTAREMOTE_API_URL; the window shows a pairing code.'}
             </Typography.Paragraph>
             <Space wrap>
-              <Button type="primary" icon={<DownloadOutlined />} href={AGENT_SETUP} size="large">
-                {zh ? '下载安装包 (NSIS)' : 'Download installer (NSIS)'}
+              <Button type="primary" icon={<WindowsOutlined />} href={AGENT_SETUP} size="large">
+                {zh ? 'Windows 安装包' : 'Windows installer'}
               </Button>
-              <Button icon={<DownloadOutlined />} href={AGENT_PORTABLE} size="large">
-                {zh ? '便携版 Portable' : 'Portable'}
+              <Button icon={<WindowsOutlined />} href={AGENT_PORTABLE} size="large">
+                {zh ? 'Windows 便携版' : 'Windows portable'}
+              </Button>
+              <Button icon={<AppleOutlined />} href={AGENT_MAC} size="large">
+                macOS DMG
               </Button>
             </Space>
           </section>
 
-          <section
-            style={{
-              background: '#161f2e',
-              border: '1px solid #21334a',
-              borderRadius: 12,
-              padding: 24,
-            }}
-          >
+          <section style={sectionStyle}>
+            <Typography.Title level={3} style={{ color: '#e6edf3', marginTop: 0 }}>
+              <ControlOutlined /> {zh ? 'Viewer（PC 主控）' : 'Viewer (PC controller)'}
+            </Typography.Title>
+            <Typography.Paragraph style={{ color: '#8b949e' }}>
+              {zh
+                ? '安装在运维 / 监控电脑上：登录后输入配对码，远程查看并操作 Agent。'
+                : 'Install on the operator PC: sign in, enter a pairing code, view and control the Agent.'}
+            </Typography.Paragraph>
+            <Space wrap>
+              <Button type="primary" icon={<WindowsOutlined />} href={VIEWER_WIN} size="large">
+                {zh ? 'Windows 便携版' : 'Windows portable'}
+              </Button>
+              <Button icon={<AppleOutlined />} href={VIEWER_MAC} size="large">
+                macOS DMG
+              </Button>
+            </Space>
+          </section>
+
+          <section style={sectionStyle}>
             <Typography.Title level={3} style={{ color: '#e6edf3', marginTop: 0 }}>
               <AndroidOutlined /> {zh ? 'Android 主控' : 'Android controller'}
             </Typography.Title>
