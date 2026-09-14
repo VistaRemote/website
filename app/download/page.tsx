@@ -17,16 +17,17 @@ const TOKEN = {
   fontFamily: "'Inter', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif",
 }
 
-/** Override via NEXT_PUBLIC_RELEASE_BASE for GitHub Releases CDN */
+/** Public binary bucket (source stays private). Override via env if needed. */
+const RELEASE_VERSION = process.env.NEXT_PUBLIC_RELEASE_VERSION ?? '1.0.0'
 const RELEASE_BASE =
   process.env.NEXT_PUBLIC_RELEASE_BASE ??
-  'https://github.com/VistaRemote/desktop/releases/latest/download'
+  'https://github.com/VistaRemote/downloads/releases/latest/download'
 
-const AGENT_SETUP = `${RELEASE_BASE}/VistaRemote-Agent-1.0.0-win-setup.exe`
-const AGENT_PORTABLE = `${RELEASE_BASE}/VistaRemote-Agent-1.0.0-win.exe`
+const AGENT_SETUP = `${RELEASE_BASE}/VistaRemote-Agent-${RELEASE_VERSION}-win-setup.exe`
+const AGENT_PORTABLE = `${RELEASE_BASE}/VistaRemote-Agent-${RELEASE_VERSION}-win.exe`
 const ANDROID_APK =
   process.env.NEXT_PUBLIC_ANDROID_APK_URL ??
-  'https://github.com/VistaRemote/mobile/releases/latest/download/VistaRemote-1.0.0.apk'
+  `${RELEASE_BASE}/VistaRemote-${RELEASE_VERSION}.apk`
 
 function DownloadInner() {
   const { locale, m, config } = useLocale()
@@ -53,6 +54,33 @@ function DownloadInner() {
           {zh
             ? 'v1.0 软商用：Windows Agent 安装包 / 便携版，以及 Android 主控 APK（侧载）。'
             : 'v1.0 soft commercial: Windows Agent installer / portable, and Android controller APK (sideload).'}
+        </Typography.Paragraph>
+        <Typography.Paragraph style={{ color: '#8b949e', fontSize: 14 }}>
+          {zh ? (
+            <>
+              安装包托管在公开仓库{' '}
+              <a href="https://github.com/VistaRemote/downloads/releases" style={{ color: '#1677ff' }}>
+                VistaRemote/downloads
+              </a>
+              （源码仓保持私有）。也可在{' '}
+              <a href="https://github.com/VistaRemote/downloads/releases/latest" style={{ color: '#1677ff' }}>
+                GitHub Releases
+              </a>{' '}
+              直接下载。
+            </>
+          ) : (
+            <>
+              Binaries are hosted on the public{' '}
+              <a href="https://github.com/VistaRemote/downloads/releases" style={{ color: '#1677ff' }}>
+                VistaRemote/downloads
+              </a>{' '}
+              repo (source stays private). Also available on{' '}
+              <a href="https://github.com/VistaRemote/downloads/releases/latest" style={{ color: '#1677ff' }}>
+                GitHub Releases
+              </a>
+              .
+            </>
+          )}
         </Typography.Paragraph>
 
         <Alert
