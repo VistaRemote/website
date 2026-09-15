@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { ConfigProvider, theme, Button, Typography, Space, Alert } from 'antd'
 import {
   DownloadOutlined,
@@ -24,19 +25,22 @@ const TOKEN = {
   fontFamily: "'Inter', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif",
 }
 
-const RELEASE_VERSION = process.env.NEXT_PUBLIC_RELEASE_VERSION ?? '1.0.0'
+/** Stable names — always resolve to the newest GitHub Release via /latest/download/ */
 const RELEASE_BASE =
   process.env.NEXT_PUBLIC_RELEASE_BASE ??
   'https://github.com/VistaRemote/downloads/releases/latest/download'
 
-const AGENT_SETUP = `${RELEASE_BASE}/VistaRemote-Agent-${RELEASE_VERSION}-win-setup.exe`
-const AGENT_PORTABLE = `${RELEASE_BASE}/VistaRemote-Agent-${RELEASE_VERSION}-win.exe`
-const AGENT_MAC = `${RELEASE_BASE}/VistaRemote-Agent-${RELEASE_VERSION}-mac.dmg`
-const VIEWER_WIN = `${RELEASE_BASE}/VistaRemote-Viewer-${RELEASE_VERSION}-win.exe`
-const VIEWER_MAC = `${RELEASE_BASE}/VistaRemote-Viewer-${RELEASE_VERSION}-mac.dmg`
+const AGENT_SETUP = `${RELEASE_BASE}/VistaRemote-Agent-win-setup.exe`
+const AGENT_PORTABLE = `${RELEASE_BASE}/VistaRemote-Agent-win.exe`
+const AGENT_MAC = `${RELEASE_BASE}/VistaRemote-Agent-mac.dmg`
+const VIEWER_WIN = `${RELEASE_BASE}/VistaRemote-Viewer-win.exe`
+const VIEWER_MAC = `${RELEASE_BASE}/VistaRemote-Viewer-mac.dmg`
 const ANDROID_APK =
-  process.env.NEXT_PUBLIC_ANDROID_APK_URL ??
-  `${RELEASE_BASE}/VistaRemote-${RELEASE_VERSION}.apk`
+  process.env.NEXT_PUBLIC_ANDROID_APK_URL ?? `${RELEASE_BASE}/VistaRemote.apk`
+
+const DOWNLOADS_API =
+  process.env.NEXT_PUBLIC_DOWNLOADS_API ??
+  'https://api.github.com/repos/VistaRemote/downloads/releases/latest'
 
 const sectionStyle = {
   background: '#161f2e',
@@ -48,6 +52,29 @@ const sectionStyle = {
 function DownloadInner() {
   const { locale, m, config } = useLocale()
   const zh = locale.startsWith('zh')
+  const [versionLabel, setVersionLabel] = useState<string | null>(null)
+
+  useEffect(() => {
+    let cancelled = false
+    fetch(DOWNLOADS_API)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data: { tag_name?: string } | null) => {
+        if (cancelled || !data?.tag_name) return
+        setVersionLabel(data.tag_name.replace(/^v/, ''))
+      })
+      .catch(() => {
+        /* keep generic copy if API blocked */
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  const versionText = versionLabel
+    ? zh
+      ? `当前最新 ${versionLabel}：`
+      : `Latest ${versionLabel}: `
+    : ''
 
   return (
     <ConfigProvider
@@ -68,8 +95,8 @@ function DownloadInner() {
         </Typography.Title>
         <Typography.Paragraph style={{ color: '#8b949e', fontSize: 16 }}>
           {zh
-            ? 'v1.0：Agent（被控）与 Viewer（PC 主控）提供 Windows / macOS；Android 为主控侧载 APK。'
-            : 'v1.0: Agent (host) and Viewer (PC controller) for Windows / macOS; Android controller APK.'}
+            ? `${versionText}Agent（被控）与 Viewer（PC 主控）提供 Windows / macOS；Android 为主控侧载 APK。按钮始终指向最新安装包。`
+            : `${versionText}Agent (host) and Viewer (PC controller) for Windows / macOS; Android controller APK. Buttons always download the latest build.`}
         </Typography.Paragraph>
         <Typography.Paragraph style={{ color: '#8b949e', fontSize: 14 }}>
           {zh ? (
