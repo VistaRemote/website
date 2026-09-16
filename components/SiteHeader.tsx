@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, type CSSProperties, type MouseEvent } from 'react'
 import { Button, Dropdown, Tooltip } from 'antd'
 import {
   GlobalOutlined,
@@ -8,6 +8,7 @@ import {
   MenuOutlined,
   CloseOutlined,
   DownOutlined,
+  DownloadOutlined,
 } from '@ant-design/icons'
 import type { MenuProps } from 'antd'
 import { LOCALE_MENU, useLocale } from '@/lib/i18n'
@@ -22,6 +23,21 @@ const NAV_KEYS = [
   'docs',
 ] as const
 const loginUrl = 'https://admin.vistacast.dev/'
+
+const navBtnStyle: CSSProperties = {
+  background: 'none',
+  border: 'none',
+  color: '#8b949e',
+  fontSize: 14,
+  padding: '6px 12px',
+  borderRadius: 6,
+  cursor: 'pointer',
+  transition: 'color 0.15s, background 0.15s',
+  whiteSpace: 'nowrap',
+  textDecoration: 'none',
+  display: 'inline-flex',
+  alignItems: 'center',
+}
 
 export default function SiteHeader() {
   const { locale, setLocale, m, config } = useLocale()
@@ -48,6 +64,15 @@ export default function SiteHeader() {
   const headerBg = scrolled ? 'rgba(13,17,23,0.92)' : 'rgba(13,17,23,0.6)'
 
   const localeMenu: MenuProps['items'] = LOCALE_MENU
+
+  const hoverIn = (e: MouseEvent<HTMLElement>) => {
+    e.currentTarget.style.color = '#e6edf3'
+    e.currentTarget.style.background = 'rgba(255,255,255,0.05)'
+  }
+  const hoverOut = (e: MouseEvent<HTMLElement>) => {
+    e.currentTarget.style.color = '#8b949e'
+    e.currentTarget.style.background = 'none'
+  }
 
   return (
     <header
@@ -125,29 +150,21 @@ export default function SiteHeader() {
             <button
               key={key}
               onClick={() => scrollTo(key === 'docs' ? 'quickstart' : key)}
-              style={{
-                background: 'none',
-                border: 'none',
-                color: '#8b949e',
-                fontSize: 14,
-                padding: '6px 12px',
-                borderRadius: 6,
-                cursor: 'pointer',
-                transition: 'color 0.15s, background 0.15s',
-                whiteSpace: 'nowrap',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = '#e6edf3'
-                e.currentTarget.style.background = 'rgba(255,255,255,0.05)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = '#8b949e'
-                e.currentTarget.style.background = 'none'
-              }}
+              style={navBtnStyle}
+              onMouseEnter={hoverIn}
+              onMouseLeave={hoverOut}
             >
               {m.header.nav[key]}
             </button>
           ))}
+          <a
+            href="/download"
+            style={navBtnStyle}
+            onMouseEnter={hoverIn}
+            onMouseLeave={hoverOut}
+          >
+            {m.header.download}
+          </a>
         </nav>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
@@ -190,7 +207,9 @@ export default function SiteHeader() {
           </Dropdown>
 
           <Button
+            type="primary"
             size="small"
+            icon={<DownloadOutlined />}
             href="/download"
             style={{ borderRadius: 6, fontSize: 13 }}
           >
@@ -199,7 +218,6 @@ export default function SiteHeader() {
 
           <Tooltip title={m.header.signInTooltip}>
             <Button
-              type="primary"
               icon={<UserOutlined />}
               size="small"
               style={{ borderRadius: 6, fontSize: 13 }}
@@ -259,6 +277,22 @@ export default function SiteHeader() {
               {m.header.nav[key]}
             </button>
           ))}
+          <a
+            href="/download"
+            onClick={() => setMobileOpen(false)}
+            style={{
+              display: 'block',
+              width: '100%',
+              textAlign: 'left',
+              color: '#1677ff',
+              fontSize: 15,
+              padding: '10px 0',
+              textDecoration: 'none',
+              fontWeight: 600,
+            }}
+          >
+            {m.header.download}
+          </a>
         </nav>
       )}
 

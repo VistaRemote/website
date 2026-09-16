@@ -28,6 +28,7 @@ export default function SiteFooter() {
     {
       title: f.resources,
       items: [
+        { label: m.header.download, href: '/download' },
         { label: f.links.devDocs, href: '#' },
         { label: f.links.pluginSdk, href: '#' },
         { label: f.links.apiRef, href: '#' },
