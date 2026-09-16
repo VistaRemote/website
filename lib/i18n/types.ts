@@ -103,6 +103,7 @@ export interface Messages {
     menuAria: string
     signIn: string
     signInTooltip: string
+    download: string
     nav: {
       capabilities: string
       multiplatform: string
@@ -110,6 +111,26 @@ export interface Messages {
       ecosystem: string
       docs: string
     }
+  }
+  download: {
+    title: string
+    lead: string
+    note: string
+    agentTitle: string
+    agentBlurb: string
+    viewerTitle: string
+    viewerBlurb: string
+    androidTitle: string
+    androidBlurb: string
+    winSetup: string
+    winPortable: string
+    macDmg: string
+    apk: string
+    releases: string
+    unsigned: string
+    versionPrefix: string
+    backHome: string
+    hostedOn: string
   }
   footer: {
     tagline: string

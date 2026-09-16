@@ -194,7 +194,7 @@ export default function SiteHeader() {
             href="/download"
             style={{ borderRadius: 6, fontSize: 13 }}
           >
-            Download
+            {m.header.download}
           </Button>
 
           <Tooltip title={m.header.signInTooltip}>
