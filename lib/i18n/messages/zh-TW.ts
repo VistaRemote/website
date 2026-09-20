@@ -414,7 +414,7 @@ const zhTW: Messages = {
         { t: 'cmt', v: '# Linux / macOS:' },
         { t: 'cmd', v: 'bash init.sh' },
         { t: '', v: '' },
-        { t: 'cmt', v: '# 3. 啟動 MVP 開發服務' },
+        { t: 'cmt', v: '# 3. 啟動本地開發服務' },
         { t: 'cmd', v: 'pnpm dev:mvp' },
         { t: '', v: '' },
         { t: 'cmt', v: '# Web Client →  http://localhost:3000' },

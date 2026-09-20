@@ -417,7 +417,7 @@ const en: Messages = {
         { t: 'cmt', v: '# Linux / macOS:' },
         { t: 'cmd', v: 'bash init.sh' },
         { t: '', v: '' },
-        { t: 'cmt', v: '# 3. Start MVP dev services' },
+        { t: 'cmt', v: '# 3. Start local dev services' },
         { t: 'cmd', v: 'pnpm dev:mvp' },
         { t: '', v: '' },
         { t: 'cmt', v: '# Web Client →  http://localhost:3000' },

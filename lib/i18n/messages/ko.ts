@@ -417,7 +417,7 @@ const ko: Messages = {
         { t: 'cmt', v: '# Linux / macOS:' },
         { t: 'cmd', v: 'bash init.sh' },
         { t: '', v: '' },
-        { t: 'cmt', v: '# 3. MVP 개발 서비스 시작' },
+        { t: 'cmt', v: '# 3. 로컬 개발 서비스 시작' },
         { t: 'cmd', v: 'pnpm dev:mvp' },
         { t: '', v: '' },
         { t: 'cmt', v: '# Web Client →  http://localhost:3000' },
