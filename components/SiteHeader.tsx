@@ -8,7 +8,6 @@ import {
   MenuOutlined,
   CloseOutlined,
   DownOutlined,
-  DownloadOutlined,
 } from '@ant-design/icons'
 import type { MenuProps } from 'antd'
 import { LOCALE_MENU, useLocale } from '@/lib/i18n'
@@ -205,16 +204,6 @@ export default function SiteHeader() {
               <DownOutlined style={{ fontSize: 10, opacity: 0.6 }} />
             </button>
           </Dropdown>
-
-          <Button
-            type="primary"
-            size="small"
-            icon={<DownloadOutlined />}
-            href="/download"
-            style={{ borderRadius: 6, fontSize: 13 }}
-          >
-            {m.header.download}
-          </Button>
 
           <Tooltip title={m.header.signInTooltip}>
             <Button
