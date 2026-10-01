@@ -77,8 +77,8 @@ const en: Messages = {
   },
   hero: {
     title: 'Reach the field remotely. Keep insights in your data center.',
-    titleEn: 'WebRTC Remote Control + Self-Hosted AI Audit',
-    desc: 'Cross-platform real-time remote desktop and device takeover. WebRTC ultra-low latency combined with LLM-driven session recording, AI summaries, and audit logs. 100% self-hosted. Built for industrial PCs, edge gateways, and IT desktop operations.',
+    titleEn: 'WebRTC Remote Control + AI Computer Use on Win/Mac',
+    desc: 'Cross-platform real-time remote desktop with optional AI assist: Windows-MCP / MacOS-MCP-style look → click/type on a paired remote Windows or macOS Agent (including the browser). Off by default, second consent, no scripts or registry. Self-hosted AI summaries and audit — built for industrial PCs, edge gateways, and IT desktop ops.',
     ctaPrimary: 'Quick start deployment',
     ctaSecondary: 'Developer & plugin docs',
     stats: [
@@ -88,7 +88,7 @@ const en: Messages = {
       { v: 'Polyform-NC', l: 'Open source' },
     ],
     mockAria: 'Remote session mock UI',
-    tags: ['WebRTC 42ms', 'Recording', 'AES-256 encrypted', 'Multi-device'],
+    tags: ['WebRTC 42ms', 'AI on Win/Mac', 'AES-256', 'Multi-endpoint'],
   },
   scenarios: {
     eyebrow: 'Use cases',
@@ -112,9 +112,9 @@ const en: Messages = {
         tags: ['Financial compliance', 'On-prem'],
       },
       {
-        title: 'AI session insights',
-        desc: 'Auto-generated recording summaries, anomaly detection, and ops efficiency reports. AI runs offline — data never leaves.',
-        tags: ['AI analytics', 'Audit reports'],
+        title: 'AI remote computer use',
+        desc: 'Windows-MCP / MacOS-MCP-style: type a task in Viewer; after a second Allow AI, the model clicks and types only in windows already open on the remote Windows/macOS host, including the browser.',
+        tags: ['Windows-MCP', 'MacOS-MCP', 'Computer Use'],
       },
     ],
     notFitLabel: 'Not a fit',
@@ -126,7 +126,7 @@ const en: Messages = {
     eyebrow: 'Core capabilities',
     title: 'A console that controls everything',
     subtitle:
-      'From millisecond transport to AI session insights to compliance audit loops — three dimensions covering enterprise remote ops.',
+      'From millisecond transport to AI remote computer use and session insights to compliance audit loops — covering enterprise remote ops.',
     tabs: { realtime: 'Real-time control', audit: 'Recording & AI', management: 'Unified management' },
     realtime: {
       conn: {
@@ -146,8 +146,9 @@ const en: Messages = {
           'Multi-monitor independent mapping, seamless stream switching',
           'Bidirectional file transfer, drag-and-drop upload',
           'Clipboard sync and text paste injection',
+          'Optional AI assist (off by default): Windows-MCP / MacOS-MCP-style computer use. After a second allow, AI clicks and types in already-open windows on remote Windows/macOS, including the browser. No scripts or registry.',
         ],
-        tags: ['Multi-monitor', 'File transfer', 'Clipboard', 'Electron'],
+        tags: ['Multi-monitor', 'AI assist', 'Windows-MCP', 'MacOS-MCP'],
       },
     },
     audit: {

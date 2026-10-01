@@ -146,6 +146,7 @@ const pt: Messages = {
           'Mapeamento independente de múltiplos monitores, troca de stream sem interrupções',
           'Transferência de arquivos bidirecional, upload por arrastar e soltar',
           'Sincronização da área de transferência e injeção de texto colado',
+          'Assistência de IA opcional, desligada por padrão: você descreve a tarefa no Viewer e, depois de uma permissão separada da outra pessoa, a IA só clica e digita em janelas já abertas, inclusive o navegador. Sem scripts nem registro.',
         ],
         tags: ['Multimonitor', 'Transferência de arquivos', 'Área de transferência', 'Electron'],
       },

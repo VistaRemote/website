@@ -146,6 +146,7 @@ const nl: Messages = {
           'Onafhankelijke mapping van meerdere monitoren, naadloze streamwisseling',
           'Bidirectionele bestandsoverdracht, upload via slepen en neerzetten',
           'Klembordsynchronisatie en tekstplakinjectie',
+          'Optionele AI-hulp, standaard uit: je typt een taak in de Viewer en, nadat de ander apart toestemming geeft, klikt en typt de AI alleen in vensters die al open zijn, inclusief de browser. Geen scripts of register.',
         ],
         tags: ['Meerdere monitoren', 'Bestandsoverdracht', 'Klembord', 'Electron'],
       },

@@ -5,6 +5,8 @@ import { ThunderboltOutlined, BookOutlined } from '@ant-design/icons'
 import { useLocale } from '@/lib/i18n'
 import styles from '@/app/hero.module.css'
 
+const DOCS_URL = 'https://docs.remote.vistacast.dev'
+
 const MOCK_LINES = [
   { type: 'dim', text: '# VistaRemote Agent v2.4.1 — session established' },
   { type: 'hi', text: 'remote@edge-gw-007:~$' },
@@ -46,6 +48,7 @@ export default function HeroSection() {
                 type="primary"
                 size="large"
                 icon={<ThunderboltOutlined />}
+                href="#quickstart"
                 style={{ borderRadius: 8, fontWeight: 600 }}
               >
                 {m.hero.ctaPrimary}
@@ -53,6 +56,9 @@ export default function HeroSection() {
               <Button
                 size="large"
                 icon={<BookOutlined />}
+                href={DOCS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   borderRadius: 8,
                   background: 'transparent',

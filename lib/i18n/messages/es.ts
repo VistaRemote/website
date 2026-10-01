@@ -146,6 +146,7 @@ const es: Messages = {
           'Mapeo independiente de múltiples monitores, cambio de flujo sin interrupciones',
           'Transferencia de archivos bidireccional, carga por arrastrar y soltar',
           'Sincronización del portapapeles e inyección de texto pegado',
+          'Ayuda de IA opcional, desactivada por defecto: escribes una tarea en el Viewer y, tras un permiso aparte de la otra persona, la IA solo hace clic y escribe en ventanas ya abiertas, incluido el navegador. Sin scripts ni registro.',
         ],
         tags: ['Multimonitor', 'Transferencia de archivos', 'Portapapeles', 'Electron'],
       },

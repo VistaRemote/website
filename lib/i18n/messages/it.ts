@@ -146,6 +146,7 @@ const it: Messages = {
           'Mappatura indipendente multi-monitor, cambio stream senza interruzioni',
           'Trasferimento file bidirezionale, upload drag-and-drop',
           'Sincronizzazione clipboard e iniezione testo incollato',
+          'Assistenza IA facoltativa, spenta per impostazione predefinita: scrivi un compito nel Viewer e, dopo un consenso separato dell\'altra persona, l\'IA clicca e scrive solo in finestre già aperte, browser incluso. Niente script né registro.',
         ],
         tags: ['Multi-monitor', 'Trasferimento file', 'Clipboard', 'Electron'],
       },

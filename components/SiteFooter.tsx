@@ -5,10 +5,12 @@ import { GithubOutlined, BookOutlined, ApiOutlined } from '@ant-design/icons'
 import { useLocale } from '@/lib/i18n'
 import LogoMark from './LogoMark'
 
+const DOCS_URL = 'https://docs.remote.vistacast.dev'
+
 const ICON_LINKS = [
   { icon: <GithubOutlined />, key: 'github' as const, href: 'https://github.com/VistaRemote/vibeCode' },
-  { icon: <BookOutlined />, key: 'docs' as const, href: '#' },
-  { icon: <ApiOutlined />, key: 'sdk' as const, href: '#' },
+  { icon: <BookOutlined />, key: 'docs' as const, href: DOCS_URL },
+  { icon: <ApiOutlined />, key: 'sdk' as const, href: DOCS_URL + '/guide/plugin-development' },
 ]
 
 export default function SiteFooter() {
@@ -29,9 +31,9 @@ export default function SiteFooter() {
       title: f.resources,
       items: [
         { label: m.header.download, href: '/download' },
-        { label: f.links.devDocs, href: '#' },
-        { label: f.links.pluginSdk, href: '#' },
-        { label: f.links.apiRef, href: '#' },
+        { label: f.links.devDocs, href: DOCS_URL },
+        { label: f.links.pluginSdk, href: DOCS_URL + '/guide/plugin-development' },
+        { label: f.links.apiRef, href: DOCS_URL + '/api/server-rest' },
         { label: f.links.changelog, href: '#' },
       ],
     },
