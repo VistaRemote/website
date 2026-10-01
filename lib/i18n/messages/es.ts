@@ -79,6 +79,7 @@ const es: Messages = {
     title: 'Llegue al campo de forma remota. Mantenga la información en su centro de datos.',
     titleEn: 'WebRTC Remote Control + Self-Hosted AI Audit',
     desc: 'Escritorio remoto en tiempo real multiplataforma y toma de control de dispositivos. WebRTC de latencia ultrabaja combinado con grabación de sesiones impulsada por LLM, resúmenes con IA y registros de auditoría. 100% autoalojado. Diseñado para PCs industriales, gateways perimetrales y operaciones de escritorio de TI.',
+    mcpLine: 'Capacidad clave · control AI estilo Windows-MCP / MacOS-MCP (ver → clic/tecleo, desactivado por defecto)',
     ctaPrimary: 'Despliegue rápido',
     ctaSecondary: 'Documentación para desarrolladores y plugins',
     stats: [

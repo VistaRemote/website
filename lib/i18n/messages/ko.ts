@@ -79,6 +79,7 @@ const ko: Messages = {
     title: '현장에 원격으로 닿고, 인사이트는 데이터센터에 남깁니다.',
     titleEn: 'WebRTC Remote Control + Self-Hosted AI Audit',
     desc: '크로스 플랫폼 실시간 원격 데스크톱 및 디바이스 테이크오버. 초저지연 WebRTC와 LLM 기반 세션 녹화, AI 요약, 감사 로그를 결합. 100% 셀프호스팅. 산업용 PC, 엣지 게이트웨이, IT 데스크톱 운영용으로 설계.',
+    mcpLine: '핵심 역량 · Windows-MCP / MacOS-MCP 스타일 AI 원격 조작(화면 보고 클릭/입력, 기본 꺼짐)',
     ctaPrimary: '빠른 시작 배포',
     ctaSecondary: '개발자 및 플러그인 문서',
     stats: [

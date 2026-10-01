@@ -79,6 +79,7 @@ const pt: Messages = {
     title: 'Alcance o campo remotamente. Mantenha os insights no seu data center.',
     titleEn: 'WebRTC Remote Control + Self-Hosted AI Audit',
     desc: 'Desktop remoto em tempo real multiplataforma e tomada de controle de dispositivos. WebRTC de latência ultrabaixa combinado com gravação de sessões orientada por LLM, resumos com IA e logs de auditoria. 100% auto-hospedado. Feito para PCs industriais, gateways de borda e operações de desktop de TI.',
+    mcpLine: 'Capacidade central · AI computer use no estilo Windows-MCP / MacOS-MCP (ver → clicar/digitar, desligado por padrão)',
     ctaPrimary: 'Implantação rápida',
     ctaSecondary: 'Documentação para desenvolvedores e plugins',
     stats: [

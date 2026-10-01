@@ -9,7 +9,7 @@ import {
   useState,
 } from 'react'
 import { DEFAULT_LOCALE, type Locale, type Messages } from './types'
-import { LOCALE_CONFIG, detectBrowserLocale, loadStoredLocale, storeLocale } from './config'
+import { LOCALE_CONFIG, loadStoredLocale, storeLocale } from './config'
 import { messages } from './messages'
 
 interface LocaleContextValue {
@@ -21,16 +21,13 @@ interface LocaleContextValue {
 
 const LocaleContext = createContext<LocaleContextValue | null>(null)
 
-export function LocaleProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(DEFAULT_LOCALE)
-  const [ready, setReady] = useState(false)
+function readInitialLocale(): Locale {
+  if (typeof window === 'undefined') return DEFAULT_LOCALE
+  return loadStoredLocale() ?? DEFAULT_LOCALE
+}
 
-  useEffect(() => {
-    const stored = loadStoredLocale()
-    const detected = stored ?? detectBrowserLocale()
-    if (detected) setLocaleState(detected)
-    setReady(true)
-  }, [])
+export function LocaleProvider({ children }: { children: React.ReactNode }) {
+  const [locale, setLocaleState] = useState<Locale>(readInitialLocale)
 
   const setLocale = useCallback((next: Locale) => {
     setLocaleState(next)
@@ -39,9 +36,8 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
   }, [])
 
   useEffect(() => {
-    if (!ready) return
     document.documentElement.lang = LOCALE_CONFIG[locale].htmlLang
-  }, [locale, ready])
+  }, [locale])
 
   const value = useMemo<LocaleContextValue>(
     () => ({

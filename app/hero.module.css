@@ -1,5 +1,6 @@
 .hero {
   position: relative;
+  min-height: min(92vh, 820px);
   overflow: hidden;
   padding: 96px 0 80px;
   border-bottom: 1px solid #21334a;
@@ -96,6 +97,22 @@
   margin: 20px 0 32px;
 }
 
+.mcpLine {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: -12px 0 28px;
+  padding: 8px 12px;
+  border: 1px solid rgba(22, 119, 255, 0.35);
+  border-radius: 8px;
+  background: rgba(22, 119, 255, 0.08);
+  color: #9ec1ff;
+  font-size: 13px;
+  line-height: 1.45;
+  max-width: 520px;
+}
+
 .actions {
   display: flex;
   gap: 12px;
@@ -139,6 +156,7 @@
 }
 
 .mockCard {
+  min-height: 320px;
   background: #010409;
   border: 1px solid #21334a;
   border-radius: 12px;

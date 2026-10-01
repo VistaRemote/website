@@ -153,6 +153,7 @@ export interface Messages {
     title: string
     titleEn: string
     desc: string
+    mcpLine: string
     ctaPrimary: string
     ctaSecondary: string
     stats: { v: string; l: string }[]

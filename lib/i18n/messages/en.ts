@@ -79,6 +79,7 @@ const en: Messages = {
     title: 'Reach the field remotely. Keep insights in your data center.',
     titleEn: 'WebRTC Remote Control + AI Computer Use on Win/Mac',
     desc: 'Cross-platform real-time remote desktop with optional AI assist: Windows-MCP / MacOS-MCP-style look → click/type on a paired remote Windows or macOS Agent (including the browser). Off by default, second consent, no scripts or registry. Self-hosted AI summaries and audit — built for industrial PCs, edge gateways, and IT desktop ops.',
+    mcpLine: 'Core capability · Windows-MCP / MacOS-MCP-style AI computer use (look → click/type, off by default)',
     ctaPrimary: 'Quick start deployment',
     ctaSecondary: 'Developer & plugin docs',
     stats: [
@@ -343,7 +344,7 @@ const en: Messages = {
       },
       {
         dim: 'AI capability',
-        vistaremote: 'Session summaries, anomaly alerts (offline LLM)',
+        vistaremote: 'Session summaries, anomaly alerts, Win/Mac AI computer use (Windows-MCP / MacOS-MCP style)',
         vistacast: 'Object detection, spatial events (edge inference)',
       },
       {

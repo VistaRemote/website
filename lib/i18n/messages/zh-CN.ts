@@ -78,6 +78,7 @@ const zhCN: Messages = {
     title: '远程触达现场 洞察留在机房',
     titleEn: 'WebRTC Remote Control + AI Computer Use on Win/Mac',
     desc: '跨平台实时远程桌面，并可选用 AI 协助：对标 Windows-MCP / MacOS-MCP 的看屏→点击/输入，在已配对的远端 Windows 与 macOS 上操作（含浏览器）。默认关闭、二次同意，不含脚本与注册表。结合 WebRTC 低延迟与私有化 AI 摘要审计，专为工控机、边缘网关与 IT 桌面运维而生。',
+    mcpLine: '核心能力 · Windows-MCP / MacOS-MCP 风格 AI 远程电脑操控（看屏 → 点击/输入，默认关闭）',
     ctaPrimary: '快速开始部署',
     ctaSecondary: '开发者与插件文档',
     stats: [
@@ -342,7 +343,7 @@ const zhCN: Messages = {
       },
       {
         dim: 'AI 能力',
-        vistaremote: '会话摘要、异常操作告警（离线 LLM）',
+        vistaremote: '会话摘要、异常告警、Win/Mac AI 电脑操控（Windows-MCP / MacOS-MCP 风格）',
         vistacast: '目标检测、空间事件识别（边缘推理）',
       },
       {

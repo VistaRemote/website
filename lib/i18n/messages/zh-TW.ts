@@ -78,6 +78,7 @@ const zhTW: Messages = {
     title: '遠端觸達現場 洞察留在機房',
     titleEn: 'WebRTC Remote Control + Self-Hosted AI Audit',
     desc: '跨平台即時遠端桌面與裝置接管。結合 WebRTC 極低延遲與大模型驅動的會話錄製、AI 摘要、稽核日誌。支援 100% 私有化部署。專為工控機、邊緣閘道與 IT 桌面維運而生。',
+    mcpLine: '核心能力 · Windows-MCP / MacOS-MCP 風格 AI 遠端電腦操控（看螢幕 → 點擊/輸入，預設關閉）',
     ctaPrimary: '快速開始部署',
     ctaSecondary: '開發者與外掛文件',
     stats: [

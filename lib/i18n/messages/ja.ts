@@ -79,6 +79,7 @@ const ja: Messages = {
     title: '現場にリモートで届く。インサイトはデータセンターに留まる。',
     titleEn: 'WebRTC Remote Control + Self-Hosted AI Audit',
     desc: 'クロスプラットフォームのリアルタイムリモートデスクトップとデバイステイクオーバー。超低遅延 WebRTC と LLM 駆動のセッション録画、AI サマリー、監査ログを組み合わせ。100% セルフホスト。産業用 PC、エッジゲートウェイ、IT デスクトップ運用向けに設計。',
+    mcpLine: 'コア機能 · Windows-MCP / MacOS-MCP 風の AI リモート操作（画面を見てクリック/入力、既定オフ）',
     ctaPrimary: 'クイックスタートデプロイ',
     ctaSecondary: '開発者・プラグインドキュメント',
     stats: [

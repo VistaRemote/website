@@ -17,13 +17,14 @@ const MOCK_LINES = [
   { type: 'warn', text: '  42 ms' },
   { type: 'norm', text: '  encrypt: AES-256-GCM  ✓ verified' },
   { type: 'norm', text: '' },
+  { type: 'dim', text: '# AI computer-use (Windows-MCP / MacOS-MCP style)' },
+  { type: 'norm', text: '  tools: Click · Type · Scroll  scope: open windows only' },
+  { type: 'warn', text: '  consent: copilotArmed ✓  scripts/registry: denied' },
+  { type: 'norm', text: '' },
   { type: 'dim', text: '# AI session recorder → /data/sessions/s_20240628.mp4' },
   { type: 'norm', text: '  status: ' },
   { type: 'err', text: '  ● REC' },
   { type: 'norm', text: '  segment: 00:04:17  frames: 15,420' },
-  { type: 'norm', text: '' },
-  { type: 'dim', text: '# RBAC: operator@luminary · role: remote-admin' },
-  { type: 'norm', text: '  permissions: [screen, input, file, restart]' },
 ]
 
 export default function HeroSection() {
@@ -42,6 +43,8 @@ export default function HeroSection() {
           <Col xs={24} lg={12}>
             <p className={styles.titleEn}>{m.hero.titleEn}</p>
             <p className={styles.desc}>{m.hero.desc}</p>
+
+            <p className={styles.mcpLine}>{m.hero.mcpLine}</p>
 
             <div className={styles.actions}>
               <Button

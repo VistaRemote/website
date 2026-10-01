@@ -104,6 +104,7 @@ const nl: Messages = {
       {
         title: 'Beheerde IT-dienstverleners',
         desc: 'Bureaublad op afstand voor klanten met snellere probleemoplossing. Vervang ter plaatse dispatch door één link.',
+    mcpLine: 'Kernmogelijkheid · AI computer use à la Windows-MCP / MacOS-MCP (kijken → klikken/typen, standaard uit)',
         tags: ['IT-diensten', 'Bureaubladondersteuning'],
       },
       {
