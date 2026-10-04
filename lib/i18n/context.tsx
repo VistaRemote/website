@@ -37,6 +37,14 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = LOCALE_CONFIG[locale].htmlLang
+    const meta = messages[locale].meta
+    document.title = meta.title
+    const desc = document.querySelector('meta[name="description"]')
+    if (desc) desc.setAttribute('content', meta.description)
+    const ogTitle = document.querySelector('meta[property="og:title"]')
+    if (ogTitle) ogTitle.setAttribute('content', meta.title)
+    const ogDesc = document.querySelector('meta[property="og:description"]')
+    if (ogDesc) ogDesc.setAttribute('content', meta.description)
   }, [locale])
 
   const value = useMemo<LocaleContextValue>(

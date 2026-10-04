@@ -34,7 +34,7 @@ export default function SiteFooter() {
         { label: f.links.devDocs, href: DOCS_URL },
         { label: f.links.pluginSdk, href: DOCS_URL + '/guide/plugin-development' },
         { label: f.links.apiRef, href: DOCS_URL + '/api/server-rest' },
-        { label: f.links.changelog, href: '#' },
+        { label: f.links.changelog, href: 'https://github.com/VistaRemote/vibeCode/blob/main/CHANGELOG.md' },
       ],
     },
     {

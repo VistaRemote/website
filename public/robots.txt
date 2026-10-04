@@ -1,0 +1,42 @@
+# VistaRemote marketing site — https://remote.vistacast.dev
+# Search indexing allowed. AI training / model-input crawlers restricted.
+
+User-agent: *
+Allow: /
+Content-Signal: search=yes, ai-train=no, ai-input=no
+
+User-agent: Amazonbot
+User-agent: Applebot-Extended
+User-agent: Bytespider
+User-agent: CCBot
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Claude-Web
+User-agent: anthropic-ai
+User-agent: cohere-ai
+User-agent: cohere-training-data-crawler
+User-agent: Diffbot
+User-agent: DuckAssistBot
+User-agent: FacebookBot
+User-agent: Google-CloudVertexBot
+User-agent: Google-Extended
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: OAI-SearchBot
+User-agent: ImagesiftBot
+User-agent: Meta-ExternalAgent
+User-agent: meta-externalagent
+User-agent: Meta-ExternalFetcher
+User-agent: meta-externalfetcher
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: PetalBot
+User-agent: Timpibot
+User-agent: YouBot
+User-agent: AI2Bot
+User-agent: omgili
+User-agent: omgilibot
+Disallow: /
+
+Sitemap: https://remote.vistacast.dev/sitemap.xml
