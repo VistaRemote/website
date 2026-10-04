@@ -78,6 +78,7 @@ const zhTW: Messages = {
     title: '遠端觸達現場 洞察留在機房',
     titleEn: 'WebRTC Remote Control + Self-Hosted AI Audit',
     desc: '跨平台即時遠端桌面與裝置接管。結合 WebRTC 極低延遲與大模型驅動的會話錄製、AI 摘要、稽核日誌。支援 100% 私有化部署。專為工控機、邊緣閘道與 IT 桌面維運而生。',
+    mcpLine: '核心能力 · AI 遠端電腦操控，本機 Cursor/ChatGPT 也可經 MCP 操作已允許會話（預設關閉）',
     ctaPrimary: '快速開始部署',
     ctaSecondary: '開發者與外掛文件',
     stats: [
@@ -143,6 +144,8 @@ const zhTW: Messages = {
           '多顯示器獨立對應，分屏串流切換無閃屏',
           '檔案傳輸雙向通道，拖曳即上傳',
           '剪貼簿同步與文字貼上注入',
+          '可選的 AI 協助（預設關閉）：在 Viewer 輸入任務，對方另行允許後，AI 只會在已經開啟的視窗裡點擊和輸入，包括瀏覽器。不含指令碼和登錄檔。本機 Cursor 或 ChatGPT 也可以經 MCP 操作這場已經允許的會話，但不能新開遠控。',
+          'Windows 與 macOS 可維運 Linux 桌面，也可維運不安裝圖形介面的伺服器（檔案、聊天、終端機）。',
         ],
         tags: ['多顯示器', '檔案傳輸', '剪貼簿同步', 'Electron'],
       },

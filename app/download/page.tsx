@@ -168,7 +168,7 @@ function DownloadInner() {
               {d.backHome}
             </Link>
             {' · '}
-            {m.footer.links.docs}
+            <a href="https://docs.remote.vistacast.dev" target="_blank" rel="noopener noreferrer" style={{ color: '#1677ff' }}>{m.footer.links.docs}</a>
           </Typography.Paragraph>
         </Space>
       </main>

@@ -158,19 +158,7 @@ export default function ComparisonSection() {
         </div>
 
         <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: 0,
-            marginBottom: 32,
-            background: '#161f2e',
-            border: '1px solid #21334a',
-            borderRadius: 10,
-            padding: '20px 28px',
-            flexWrap: 'wrap',
-            rowGap: 12,
-          }}
+          className="comparison-flow"
           role="img"
           aria-label={c.flowAria}
         >
@@ -179,10 +167,8 @@ export default function ComparisonSection() {
             return (
             <div
               key={i}
+              className="comparison-flow__node"
               style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
                 padding: node.label === '→' ? '0 8px' : '0 16px',
               }}
             >
@@ -204,21 +190,68 @@ export default function ComparisonSection() {
           })}
         </div>
 
-        <Table
-          columns={columns}
-          dataSource={dataSource}
-          pagination={false}
-          size="small"
-          rowClassName={(row) => (row.highlight ? 'comparison-highlight-row' : '')}
-          style={{ borderRadius: 10, overflow: 'hidden' }}
-        />
+        {/* PC: keep Ant Design table. Mobile/Pad: stacked dimension cards. */}
+        <div className="comparison-desktop">
+          <Table
+            columns={columns}
+            dataSource={dataSource}
+            pagination={false}
+            size="small"
+            rowClassName={(row) => (row.highlight ? 'comparison-highlight-row' : '')}
+            style={{ borderRadius: 10, overflow: 'hidden' }}
+          />
+        </div>
 
-        <style>{`
-          .comparison-highlight-row td {
-            background: rgba(22,119,255,0.04) !important;
-            border-left: 2px solid rgba(22,119,255,0.3) !important;
-          }
-        `}</style>
+        <div className="comparison-mobile" aria-label={c.title}>
+          {dataSource.map((row) => (
+            <article
+              key={row.key}
+              className={`comparison-card${row.highlight ? ' comparison-card--highlight' : ''}`}
+            >
+              <header className="comparison-card__dim">{row.dim}</header>
+              <div className="comparison-card__grid">
+                <div className="comparison-card__side comparison-card__side--remote">
+                  <div className="comparison-card__label">
+                    <span className="comparison-card__dot comparison-card__dot--remote" />
+                    {c.colRemote}
+                    <Tag
+                      style={{
+                        borderRadius: 4,
+                        fontSize: 10,
+                        borderColor: 'rgba(22,119,255,0.3)',
+                        color: '#1677ff',
+                        background: 'rgba(22,119,255,0.06)',
+                        marginInlineStart: 4,
+                      }}
+                    >
+                      {c.tagControl}
+                    </Tag>
+                  </div>
+                  <div className="comparison-card__value">{row.vistaremote}</div>
+                </div>
+                <div className="comparison-card__side comparison-card__side--cast">
+                  <div className="comparison-card__label">
+                    <span className="comparison-card__dot comparison-card__dot--cast" />
+                    {c.colCast}
+                    <Tag
+                      style={{
+                        borderRadius: 4,
+                        fontSize: 10,
+                        borderColor: 'rgba(245,166,35,0.3)',
+                        color: '#f5a623',
+                        background: 'rgba(245,166,35,0.06)',
+                        marginInlineStart: 4,
+                      }}
+                    >
+                      {c.tagView}
+                    </Tag>
+                  </div>
+                  <div className="comparison-card__value">{row.vistacast}</div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )

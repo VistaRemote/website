@@ -1,5 +1,6 @@
 'use client'
 
+import dynamic from 'next/dynamic'
 import { ConfigProvider, theme, FloatButton } from 'antd'
 import { ArrowUpOutlined } from '@ant-design/icons'
 
@@ -8,13 +9,14 @@ import SiteHeader from '@/components/SiteHeader'
 import HeroSection from '@/components/HeroSection'
 import ScenariosSection from '@/components/ScenariosSection'
 import CapabilitiesSection from '@/components/CapabilitiesSection'
-import MultiplatformSection from '@/components/MultiplatformSection'
-import PluginSection from '@/components/PluginSection'
-import ArchitectureSection from '@/components/ArchitectureSection'
-import ComparisonSection from '@/components/ComparisonSection'
-import EcosystemSection from '@/components/EcosystemSection'
-import QuickStartSection from '@/components/QuickStartSection'
-import SiteFooter from '@/components/SiteFooter'
+
+const MultiplatformSection = dynamic(() => import('@/components/MultiplatformSection'), { ssr: true })
+const PluginSection = dynamic(() => import('@/components/PluginSection'), { ssr: true })
+const ArchitectureSection = dynamic(() => import('@/components/ArchitectureSection'), { ssr: true })
+const ComparisonSection = dynamic(() => import('@/components/ComparisonSection'), { ssr: true })
+const EcosystemSection = dynamic(() => import('@/components/EcosystemSection'), { ssr: true })
+const QuickStartSection = dynamic(() => import('@/components/QuickStartSection'), { ssr: true })
+const SiteFooter = dynamic(() => import('@/components/SiteFooter'), { ssr: true })
 
 const TOKEN = {
   colorPrimary: '#1677ff',
@@ -29,7 +31,7 @@ const TOKEN = {
   colorTextTertiary: '#4a5568',
   colorFillSecondary: 'rgba(255,255,255,0.05)',
   colorFill: 'rgba(255,255,255,0.03)',
-  fontFamily: "'Inter', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif",
+  fontFamily: "system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif",
 }
 
 function VistaRemotePageInner() {

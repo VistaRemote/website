@@ -31,33 +31,20 @@ export default function PluginSection() {
           <p className="vr-subtitle">{p.subtitle}</p>
         </div>
 
+        {/* Desktop: equal-width pipeline strip. Mobile/Pad: horizontal scroll chips. */}
         <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 0,
-            marginBottom: 32,
-            background: '#161f2e',
-            border: '1px solid #21334a',
-            borderRadius: 10,
-            overflow: 'hidden',
-          }}
+          className="plugin-pipeline"
           role="img"
           aria-label={p.pipelineAria}
         >
           {p.pipeline.map((label, i, arr) => (
             <div
               key={label}
+              className="plugin-pipeline__item"
               style={{
-                flex: 1,
-                padding: '12px 0',
-                textAlign: 'center',
-                fontSize: 12,
-                fontFamily: 'var(--font-mono)',
                 color: PIPELINE_COLORS[i],
                 background: PIPELINE_BGS[i],
                 borderRight: i < arr.length - 1 ? '1px solid #21334a' : 'none',
-                position: 'relative',
               }}
             >
               {label}

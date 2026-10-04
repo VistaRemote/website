@@ -76,8 +76,9 @@ const zhCN: Messages = {
   },
   hero: {
     title: '远程触达现场 洞察留在机房',
-    titleEn: 'WebRTC Remote Control + Self-Hosted AI Audit',
-    desc: '跨平台实时远程桌面与设备接管。结合 WebRTC 极低延迟与大模型驱动的会话录制、AI 摘要、审计日志。支持 100% 私有化部署。专为工控机、边缘网关与 IT 桌面运维而生。',
+    titleEn: 'WebRTC Remote Control + AI Computer Use on Win/Mac',
+    desc: '跨平台实时远程桌面，并可选用 AI 协助：对标 Windows-MCP / MacOS-MCP 的看屏→点击/输入，在已配对的远端 Windows 与 macOS 上操作（含浏览器）。默认关闭、二次同意，不含脚本与注册表。结合 WebRTC 低延迟与私有化 AI 摘要审计，专为工控机、边缘网关与 IT 桌面运维而生。',
+    mcpLine: '核心能力 · AI 远程电脑操控，本机 Cursor/ChatGPT 也可经 MCP 操作已允许会话（默认关闭）',
     ctaPrimary: '快速开始部署',
     ctaSecondary: '开发者与插件文档',
     stats: [
@@ -87,7 +88,7 @@ const zhCN: Messages = {
       { v: 'Polyform-NC', l: '开源协议' },
     ],
     mockAria: '远程会话模拟界面',
-    tags: ['WebRTC 延迟 42ms', '会话录制中', 'AES-256 加密', '多端协同'],
+    tags: ['WebRTC 延迟 42ms', 'AI 操控 Win/Mac', 'AES-256 加密', '多端协同'],
   },
   scenarios: {
     eyebrow: '适用场景',
@@ -110,9 +111,9 @@ const zhCN: Messages = {
         tags: ['金融合规', '政企私有化'],
       },
       {
-        title: 'AI 智能会话洞察',
-        desc: '自动生成录制摘要、异常操作检测、运维效率报告。AI 离线运行，数据绝不外传。',
-        tags: ['AI 分析', '审计报告'],
+        title: 'AI 远程电脑操控',
+        desc: '对标 Windows-MCP / MacOS-MCP：Viewer 下任务，或本机 Cursor/ChatGPT 经 MCP；都只能操作已允许会话。默认关闭，需对方二次允许 AI。',
+        tags: ['Windows-MCP', 'MacOS-MCP', 'Computer Use'],
       },
     ],
     notFitLabel: '不适合的场景',
@@ -123,7 +124,7 @@ const zhCN: Messages = {
   capabilities: {
     eyebrow: '核心能力',
     title: '掌控全局的控制台',
-    subtitle: '从毫秒级传输到 AI 会话洞察，再到合规审计闭环，三个维度全面覆盖企业远程运维需求。',
+    subtitle: '从毫秒级传输到 AI 远程电脑操控与会话洞察，再到合规审计闭环，全面覆盖企业远程运维需求。',
     tabs: { realtime: '实时控制', audit: '录制与 AI', management: '统一管理' },
     realtime: {
       conn: {
@@ -143,8 +144,10 @@ const zhCN: Messages = {
           '多显示器独立映射，分屏流切换无闪屏',
           '文件传输双向通道，拖拽即上传',
           '剪贴板同步与文本粘贴注入',
+          '可选 AI 协助（默认关闭）：对标 Windows-MCP / MacOS-MCP 的 computer-use。在 Viewer 下任务，对方二次允许后，AI 在远端 Windows/macOS 已打开窗口内点击与输入（含浏览器）。不含脚本与注册表。本机 Cursor 或 ChatGPT 也可以经 MCP 操作这场已经允许的会话，但不能新开远控。',
+          'Windows 与 macOS 可运维 Linux 桌面，也可运维不装图形界面的服务器（文件、聊天、终端）。',
         ],
-        tags: ['多显示器', '文件传输', '剪贴板同步', 'Electron'],
+        tags: ['多显示器', 'AI 协助', 'Windows-MCP', 'MacOS-MCP'],
       },
     },
     audit: {
@@ -341,7 +344,7 @@ const zhCN: Messages = {
       },
       {
         dim: 'AI 能力',
-        vistaremote: '会话摘要、异常操作告警（离线 LLM）',
+        vistaremote: '会话摘要、异常告警、Win/Mac AI 电脑操控（Windows-MCP / MacOS-MCP 风格）',
         vistacast: '目标检测、空间事件识别（边缘推理）',
       },
       {

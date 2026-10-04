@@ -5,6 +5,8 @@ import { ThunderboltOutlined, BookOutlined } from '@ant-design/icons'
 import { useLocale } from '@/lib/i18n'
 import styles from '@/app/hero.module.css'
 
+const DOCS_URL = 'https://docs.remote.vistacast.dev'
+
 const MOCK_LINES = [
   { type: 'dim', text: '# VistaRemote Agent v2.4.1 — session established' },
   { type: 'hi', text: 'remote@edge-gw-007:~$' },
@@ -15,13 +17,14 @@ const MOCK_LINES = [
   { type: 'warn', text: '  42 ms' },
   { type: 'norm', text: '  encrypt: AES-256-GCM  ✓ verified' },
   { type: 'norm', text: '' },
+  { type: 'dim', text: '# AI computer-use (Windows-MCP / MacOS-MCP style)' },
+  { type: 'norm', text: '  tools: Click · Type · Scroll  scope: open windows only' },
+  { type: 'warn', text: '  consent: copilotArmed ✓  scripts/registry: denied' },
+  { type: 'norm', text: '' },
   { type: 'dim', text: '# AI session recorder → /data/sessions/s_20240628.mp4' },
   { type: 'norm', text: '  status: ' },
   { type: 'err', text: '  ● REC' },
   { type: 'norm', text: '  segment: 00:04:17  frames: 15,420' },
-  { type: 'norm', text: '' },
-  { type: 'dim', text: '# RBAC: operator@luminary · role: remote-admin' },
-  { type: 'norm', text: '  permissions: [screen, input, file, restart]' },
 ]
 
 export default function HeroSection() {
@@ -41,11 +44,14 @@ export default function HeroSection() {
             <p className={styles.titleEn}>{m.hero.titleEn}</p>
             <p className={styles.desc}>{m.hero.desc}</p>
 
+            <p className={styles.mcpLine}>{m.hero.mcpLine}</p>
+
             <div className={styles.actions}>
               <Button
                 type="primary"
                 size="large"
                 icon={<ThunderboltOutlined />}
+                href="#quickstart"
                 style={{ borderRadius: 8, fontWeight: 600 }}
               >
                 {m.hero.ctaPrimary}
@@ -53,6 +59,9 @@ export default function HeroSection() {
               <Button
                 size="large"
                 icon={<BookOutlined />}
+                href={DOCS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   borderRadius: 8,
                   background: 'transparent',
