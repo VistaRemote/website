@@ -79,7 +79,7 @@ const pt: Messages = {
     title: 'Alcance o campo remotamente. Mantenha os insights no seu data center.',
     titleEn: 'WebRTC Remote Control + Self-Hosted AI Audit',
     desc: 'Desktop remoto em tempo real multiplataforma e tomada de controle de dispositivos. WebRTC de latência ultrabaixa combinado com gravação de sessões orientada por LLM, resumos com IA e logs de auditoria. 100% auto-hospedado. Feito para PCs industriais, gateways de borda e operações de desktop de TI.',
-    mcpLine: 'Capacidade central · AI computer use no estilo Windows-MCP / MacOS-MCP (ver → clicar/digitar, desligado por padrão)',
+    mcpLine: 'Capacidade central · AI no remoto + MCP local Cursor/ChatGPT em sessão já permitida (desligado por padrão)',
     ctaPrimary: 'Implantação rápida',
     ctaSecondary: 'Documentação para desenvolvedores e plugins',
     stats: [
@@ -147,7 +147,8 @@ const pt: Messages = {
           'Mapeamento independente de múltiplos monitores, troca de stream sem interrupções',
           'Transferência de arquivos bidirecional, upload por arrastar e soltar',
           'Sincronização da área de transferência e injeção de texto colado',
-          'Assistência de IA opcional, desligada por padrão: você descreve a tarefa no Viewer e, depois de uma permissão separada da outra pessoa, a IA só clica e digita em janelas já abertas, inclusive o navegador. Sem scripts nem registro.',
+          'Assistência de IA opcional, desligada por padrão: você descreve a tarefa no Viewer e, depois de uma permissão separada da outra pessoa, a IA só clica e digita em janelas já abertas, inclusive o navegador. Sem scripts nem registro. A IA local (Cursor ou ChatGPT) também pode operar essa sessão já permitida via MCP, sem abrir uma sessão nova.',
+          'Windows e macOS podem operar um desktop Linux e um servidor Linux sem cliente gráfico (arquivos, chat e terminal).',
         ],
         tags: ['Multimonitor', 'Transferência de arquivos', 'Área de transferência', 'Electron'],
       },

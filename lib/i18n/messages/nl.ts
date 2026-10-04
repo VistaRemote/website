@@ -104,7 +104,7 @@ const nl: Messages = {
       {
         title: 'Beheerde IT-dienstverleners',
         desc: 'Bureaublad op afstand voor klanten met snellere probleemoplossing. Vervang ter plaatse dispatch door één link.',
-    mcpLine: 'Kernmogelijkheid · AI computer use à la Windows-MCP / MacOS-MCP (kijken → klikken/typen, standaard uit)',
+    mcpLine: 'Kernmogelijkheid · AI op afstand + lokale Cursor/ChatGPT-MCP op al toegestane sessie (standaard uit)',
         tags: ['IT-diensten', 'Bureaubladondersteuning'],
       },
       {
@@ -147,7 +147,8 @@ const nl: Messages = {
           'Onafhankelijke mapping van meerdere monitoren, naadloze streamwisseling',
           'Bidirectionele bestandsoverdracht, upload via slepen en neerzetten',
           'Klembordsynchronisatie en tekstplakinjectie',
-          'Optionele AI-hulp, standaard uit: je typt een taak in de Viewer en, nadat de ander apart toestemming geeft, klikt en typt de AI alleen in vensters die al open zijn, inclusief de browser. Geen scripts of register.',
+          'Optionele AI-hulp, standaard uit: je typt een taak in de Viewer en, nadat de ander apart toestemming geeft, klikt en typt de AI alleen in vensters die al open zijn, inclusief de browser. Geen scripts of register. Lokale AI (Cursor of ChatGPT) kan die al toegestane sessie via MCP bedienen, zonder een nieuwe sessie te openen.',
+          'Windows en macOS kunnen een Linux-desktop bedienen, en een Linux-server zonder grafische client (bestanden, chat en terminal).',
         ],
         tags: ['Meerdere monitoren', 'Bestandsoverdracht', 'Klembord', 'Electron'],
       },

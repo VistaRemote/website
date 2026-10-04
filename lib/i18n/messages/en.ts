@@ -79,7 +79,7 @@ const en: Messages = {
     title: 'Reach the field remotely. Keep insights in your data center.',
     titleEn: 'WebRTC Remote Control + AI Computer Use on Win/Mac',
     desc: 'Cross-platform real-time remote desktop with optional AI assist: Windows-MCP / MacOS-MCP-style look → click/type on a paired remote Windows or macOS Agent (including the browser). Off by default, second consent, no scripts or registry. Self-hosted AI summaries and audit — built for industrial PCs, edge gateways, and IT desktop ops.',
-    mcpLine: 'Core capability · Windows-MCP / MacOS-MCP-style AI computer use (look → click/type, off by default)',
+    mcpLine: 'Core capability · AI remote computer use + local Cursor/ChatGPT MCP on an already-allowed session (off by default)',
     ctaPrimary: 'Quick start deployment',
     ctaSecondary: 'Developer & plugin docs',
     stats: [
@@ -114,7 +114,7 @@ const en: Messages = {
       },
       {
         title: 'AI remote computer use',
-        desc: 'Windows-MCP / MacOS-MCP-style: type a task in Viewer; after a second Allow AI, the model clicks and types only in windows already open on the remote Windows/macOS host, including the browser.',
+        desc: 'Windows-MCP / MacOS-MCP-style: Viewer tasks or local Cursor/ChatGPT MCP — both only on an already-allowed session after a second Allow AI.',
         tags: ['Windows-MCP', 'MacOS-MCP', 'Computer Use'],
       },
     ],
@@ -147,7 +147,8 @@ const en: Messages = {
           'Multi-monitor independent mapping, seamless stream switching',
           'Bidirectional file transfer, drag-and-drop upload',
           'Clipboard sync and text paste injection',
-          'Optional AI assist (off by default): Windows-MCP / MacOS-MCP-style computer use. After a second allow, AI clicks and types in already-open windows on remote Windows/macOS, including the browser. No scripts or registry.',
+          'Optional AI assist (off by default): Windows-MCP / MacOS-MCP-style computer use. After a second allow, AI clicks and types in already-open windows on remote Windows/macOS, including the browser. No scripts or registry. Local Cursor or ChatGPT can also operate that already-allowed session through MCP, without opening a new remote session.',
+          'Windows and macOS can operate a Linux desktop, and a Linux server that does not install a graphical client (files, chat, and a terminal).',
         ],
         tags: ['Multi-monitor', 'AI assist', 'Windows-MCP', 'MacOS-MCP'],
       },

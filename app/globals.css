@@ -337,7 +337,304 @@ body {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--c-border); border-radius: 3px; }
 
-/* ── Mobile adjustments (PC-first, light touch) ───── */
+/* ── Site header ──────────────────────────────────── */
+.vr-site-header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.vr-site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  margin-right: 32px;
+  flex-shrink: 0;
+}
+
+.vr-site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.vr-site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  margin-left: auto; /* keep cluster flush right when desktop nav collapses */
+}
+
+.vr-site-header__locale {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: 1px solid #21334a;
+  border-radius: 6px;
+  color: #8b949e;
+  font-size: 13px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.vr-site-header__locale:hover {
+  border-color: #1677ff;
+  color: #e6edf3;
+}
+
+.vr-mobile-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid #21334a;
+  border-radius: 6px;
+  color: #8b949e;
+  padding: 4px 8px;
+  cursor: pointer;
+  min-width: 32px;
+  min-height: 28px;
+}
+
+.vr-site-header__drawer {
+  background: #0d1117;
+  border-top: 1px solid #21334a;
+  padding: 12px 24px 16px;
+}
+
+.vr-site-header__drawer-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #8b949e;
+  font-size: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #21334a;
+  cursor: pointer;
+}
+
+.vr-site-header__drawer-download {
+  display: block;
+  width: 100%;
+  text-align: left;
+  color: #1677ff;
+  font-size: 15px;
+  padding: 10px 0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ── Plugin pipeline ──────────────────────────────── */
+.plugin-pipeline {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin-bottom: 32px;
+  background: #161f2e;
+  border: 1px solid #21334a;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.plugin-pipeline__item {
+  flex: 1;
+  padding: 12px 8px;
+  text-align: center;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  position: relative;
+  white-space: nowrap;
+}
+
+/* ── Comparison (PC table + mobile cards) ─────────── */
+.comparison-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 32px;
+  background: #161f2e;
+  border: 1px solid #21334a;
+  border-radius: 10px;
+  padding: 20px 28px;
+  flex-wrap: wrap;
+  row-gap: 12px;
+}
+
+.comparison-flow__node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comparison-desktop { display: block; }
+.comparison-mobile { display: none; }
+
+.comparison-highlight-row td {
+  background: rgba(22,119,255,0.04) !important;
+  border-left: 2px solid rgba(22,119,255,0.3) !important;
+}
+
+.comparison-card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: 10px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.comparison-card--highlight {
+  border-color: rgba(22,119,255,0.35);
+  box-shadow: inset 3px 0 0 rgba(22,119,255,0.45);
+}
+
+.comparison-card__dim {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  padding: 10px 14px;
+  background: var(--c-surface-2);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.comparison-card__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.comparison-card__side {
+  padding: 12px 14px;
+}
+
+.comparison-card__side--remote {
+  border-bottom: 1px solid var(--c-border);
+}
+
+.comparison-card__label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--c-muted);
+  margin-bottom: 8px;
+}
+
+.comparison-card__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.comparison-card__dot--remote { background: #1677ff; }
+.comparison-card__dot--cast { background: #f5a623; }
+
+.comparison-card__value {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--c-text);
+  word-break: break-word;
+}
+
+/* ── Tablet + phone (≤1024): Pad & mobile only ────── */
+@media (max-width: 1024px) {
+  .vr-site-header__nav { display: none !important; }
+  .vr-mobile-menu-btn { display: inline-flex !important; }
+
+  .vr-site-header__inner {
+    padding: 0 16px;
+  }
+
+  .vr-site-header__brand {
+    margin-right: 12px;
+  }
+
+  .vr-site-header__actions {
+    gap: 8px;
+  }
+
+  .vr-site-header__drawer {
+    padding: 12px 16px 16px;
+  }
+
+  /* Plugin pipeline → scrollable chip strip */
+  .plugin-pipeline {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+  }
+
+  .plugin-pipeline__item {
+    flex: 0 0 auto;
+    min-width: max(28%, 132px);
+    padding: 12px 16px;
+    scroll-snap-align: start;
+    border-right: 1px solid #21334a;
+  }
+
+  /* Comparison → stacked cards; hide desktop table */
+  .comparison-desktop { display: none !important; }
+  .comparison-mobile { display: block !important; }
+
+  .comparison-flow {
+    padding: 16px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .comparison-flow__node {
+    flex-shrink: 0;
+  }
+
+  /* Soft edge hint that pipeline / flow can scroll */
+  .plugin-pipeline,
+  .comparison-flow {
+    mask-image: linear-gradient(to right, #000 0%, #000 calc(100% - 28px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, #000 0%, #000 calc(100% - 28px), transparent 100%);
+  }
+}
+
+/* Phone: vertical collaboration flow (no clipped mid-cards) */
+@media (max-width: 768px) {
+  .comparison-flow {
+    flex-direction: column;
+    align-items: stretch;
+    overflow-x: visible;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .comparison-flow__node {
+    flex-shrink: 1;
+    width: 100%;
+    padding: 4px 0 !important;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+}
+
+/* ── Phone-only refinements (≤768) ────────────────── */
 @media (max-width: 768px) {
   .vr-section {
     padding: 56px 0;
@@ -363,5 +660,41 @@ body {
   .vr-code-wrap {
     padding: 16px;
     font-size: 12px;
+  }
+
+  .vr-site-header__locale {
+    padding: 4px 8px;
+    gap: 4px;
+  }
+
+  /* Very narrow: icon-only sign-in to free header space */
+  .vr-site-header__signin-label {
+    display: none;
+  }
+
+  .vr-site-header__signin.ant-btn {
+    padding-inline: 8px !important;
+  }
+
+  .plugin-pipeline__item {
+    min-width: 140px;
+    font-size: 11px;
+  }
+
+  /* Pad-width phones in landscape / large phones: side-by-side product cells */
+  .comparison-card__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet portrait/landscape sweet spot: two columns inside each card */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .comparison-card__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .comparison-card__side--remote {
+    border-bottom: none;
+    border-right: 1px solid var(--c-border);
   }
 }

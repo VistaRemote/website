@@ -79,7 +79,7 @@ const es: Messages = {
     title: 'Llegue al campo de forma remota. Mantenga la información en su centro de datos.',
     titleEn: 'WebRTC Remote Control + Self-Hosted AI Audit',
     desc: 'Escritorio remoto en tiempo real multiplataforma y toma de control de dispositivos. WebRTC de latencia ultrabaja combinado con grabación de sesiones impulsada por LLM, resúmenes con IA y registros de auditoría. 100% autoalojado. Diseñado para PCs industriales, gateways perimetrales y operaciones de escritorio de TI.',
-    mcpLine: 'Capacidad clave · control AI estilo Windows-MCP / MacOS-MCP (ver → clic/tecleo, desactivado por defecto)',
+    mcpLine: 'Capacidad clave · control remoto AI + MCP local Cursor/ChatGPT en sesión ya permitida (desactivado por defecto)',
     ctaPrimary: 'Despliegue rápido',
     ctaSecondary: 'Documentación para desarrolladores y plugins',
     stats: [
@@ -147,7 +147,8 @@ const es: Messages = {
           'Mapeo independiente de múltiples monitores, cambio de flujo sin interrupciones',
           'Transferencia de archivos bidireccional, carga por arrastrar y soltar',
           'Sincronización del portapapeles e inyección de texto pegado',
-          'Ayuda de IA opcional, desactivada por defecto: escribes una tarea en el Viewer y, tras un permiso aparte de la otra persona, la IA solo hace clic y escribe en ventanas ya abiertas, incluido el navegador. Sin scripts ni registro.',
+          'Ayuda de IA opcional, desactivada por defecto: escribes una tarea en el Viewer y, tras un permiso aparte de la otra persona, la IA solo hace clic y escribe en ventanas ya abiertas, incluido el navegador. Sin scripts ni registro. La IA local (Cursor o ChatGPT) también puede operar esa sesión ya permitida por MCP, sin abrir una sesión nueva.',
+          'Windows y macOS pueden operar un escritorio Linux y un servidor Linux sin cliente gráfico (archivos, chat y terminal).',
         ],
         tags: ['Multimonitor', 'Transferencia de archivos', 'Portapapeles', 'Electron'],
       },

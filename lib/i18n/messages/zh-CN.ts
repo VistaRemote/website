@@ -78,7 +78,7 @@ const zhCN: Messages = {
     title: '远程触达现场 洞察留在机房',
     titleEn: 'WebRTC Remote Control + AI Computer Use on Win/Mac',
     desc: '跨平台实时远程桌面，并可选用 AI 协助：对标 Windows-MCP / MacOS-MCP 的看屏→点击/输入，在已配对的远端 Windows 与 macOS 上操作（含浏览器）。默认关闭、二次同意，不含脚本与注册表。结合 WebRTC 低延迟与私有化 AI 摘要审计，专为工控机、边缘网关与 IT 桌面运维而生。',
-    mcpLine: '核心能力 · Windows-MCP / MacOS-MCP 风格 AI 远程电脑操控（看屏 → 点击/输入，默认关闭）',
+    mcpLine: '核心能力 · AI 远程电脑操控，本机 Cursor/ChatGPT 也可经 MCP 操作已允许会话（默认关闭）',
     ctaPrimary: '快速开始部署',
     ctaSecondary: '开发者与插件文档',
     stats: [
@@ -112,7 +112,7 @@ const zhCN: Messages = {
       },
       {
         title: 'AI 远程电脑操控',
-        desc: '对标 Windows-MCP / MacOS-MCP：在 Viewer 里下任务，AI 只在对方已打开的窗口里点击和输入（含浏览器）。默认关闭，需对方二次允许 AI。',
+        desc: '对标 Windows-MCP / MacOS-MCP：Viewer 下任务，或本机 Cursor/ChatGPT 经 MCP；都只能操作已允许会话。默认关闭，需对方二次允许 AI。',
         tags: ['Windows-MCP', 'MacOS-MCP', 'Computer Use'],
       },
     ],
@@ -144,7 +144,8 @@ const zhCN: Messages = {
           '多显示器独立映射，分屏流切换无闪屏',
           '文件传输双向通道，拖拽即上传',
           '剪贴板同步与文本粘贴注入',
-          '可选 AI 协助（默认关闭）：对标 Windows-MCP / MacOS-MCP 的 computer-use。在 Viewer 下任务，对方二次允许后，AI 在远端 Windows/macOS 已打开窗口内点击与输入（含浏览器）。不含脚本与注册表。',
+          '可选 AI 协助（默认关闭）：对标 Windows-MCP / MacOS-MCP 的 computer-use。在 Viewer 下任务，对方二次允许后，AI 在远端 Windows/macOS 已打开窗口内点击与输入（含浏览器）。不含脚本与注册表。本机 Cursor 或 ChatGPT 也可以经 MCP 操作这场已经允许的会话，但不能新开远控。',
+          'Windows 与 macOS 可运维 Linux 桌面，也可运维不装图形界面的服务器（文件、聊天、终端）。',
         ],
         tags: ['多显示器', 'AI 协助', 'Windows-MCP', 'MacOS-MCP'],
       },

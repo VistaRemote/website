@@ -76,6 +76,7 @@ export default function SiteHeader() {
 
   return (
     <header
+      className="vr-site-header"
       style={{
         position: 'fixed',
         top: 0,
@@ -89,28 +90,11 @@ export default function SiteHeader() {
         transition: 'background 0.25s, border-color 0.25s',
       }}
     >
-      <div
-        style={{
-          maxWidth: 1200,
-          margin: '0 auto',
-          padding: '0 24px',
-          height: 60,
-          display: 'flex',
-          alignItems: 'center',
-          gap: 0,
-        }}
-      >
+      <div className="vr-site-header__inner">
         <a
           href="/"
           aria-label={m.header.homeAria}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 10,
-            textDecoration: 'none',
-            marginRight: 32,
-            flexShrink: 0,
-          }}
+          className="vr-site-header__brand"
         >
           <LogoMark size={28} />
           <span style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
@@ -139,12 +123,7 @@ export default function SiteHeader() {
         <nav
           role="navigation"
           aria-label={m.header.navAria}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 2,
-            flex: 1,
-          }}
+          className="vr-site-header__nav"
         >
           {NAV_KEYS.map((key) => (
             <button
@@ -167,7 +146,7 @@ export default function SiteHeader() {
           </a>
         </nav>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
+        <div className="vr-site-header__actions">
           <Dropdown
             menu={{
               items: localeMenu,
@@ -178,27 +157,7 @@ export default function SiteHeader() {
           >
             <button
               aria-label={m.header.toggleLangAria}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 5,
-                background: 'none',
-                border: '1px solid #21334a',
-                borderRadius: 6,
-                color: '#8b949e',
-                fontSize: 13,
-                padding: '4px 10px',
-                cursor: 'pointer',
-                transition: 'border-color 0.15s, color 0.15s',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#1677ff'
-                e.currentTarget.style.color = '#e6edf3'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#21334a'
-                e.currentTarget.style.color = '#8b949e'
-              }}
+              className="vr-site-header__locale"
             >
               <GlobalOutlined style={{ fontSize: 13 }} />
               <span>{config.short}</span>
@@ -210,27 +169,19 @@ export default function SiteHeader() {
             <Button
               icon={<UserOutlined />}
               size="small"
+              className="vr-site-header__signin"
               style={{ borderRadius: 6, fontSize: 13 }}
               href={loginUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {m.header.signIn}
+              <span className="vr-site-header__signin-label">{m.header.signIn}</span>
             </Button>
           </Tooltip>
 
           <button
             aria-label={m.header.menuAria}
             onClick={() => setMobileOpen(!mobileOpen)}
-            style={{
-              display: 'none',
-              background: 'none',
-              border: '1px solid #21334a',
-              borderRadius: 6,
-              color: '#8b949e',
-              padding: '4px 8px',
-              cursor: 'pointer',
-            }}
             className="vr-mobile-menu-btn"
           >
             {mobileOpen ? <CloseOutlined /> : <MenuOutlined />}
@@ -241,28 +192,13 @@ export default function SiteHeader() {
       {mobileOpen && (
         <nav
           aria-label={m.header.mobileNavAria}
-          style={{
-            background: '#0d1117',
-            borderTop: '1px solid #21334a',
-            padding: '12px 24px 16px',
-          }}
+          className="vr-site-header__drawer"
         >
           {NAV_KEYS.map((key) => (
             <button
               key={key}
               onClick={() => (key === 'docs' ? window.open(DOCS_URL, '_blank', 'noopener,noreferrer') : scrollTo(key))}
-              style={{
-                display: 'block',
-                width: '100%',
-                textAlign: 'left',
-                background: 'none',
-                border: 'none',
-                color: '#8b949e',
-                fontSize: 15,
-                padding: '10px 0',
-                borderBottom: '1px solid #21334a',
-                cursor: 'pointer',
-              }}
+              className="vr-site-header__drawer-link"
             >
               {m.header.nav[key]}
             </button>
@@ -270,28 +206,12 @@ export default function SiteHeader() {
           <a
             href="/download"
             onClick={() => setMobileOpen(false)}
-            style={{
-              display: 'block',
-              width: '100%',
-              textAlign: 'left',
-              color: '#1677ff',
-              fontSize: 15,
-              padding: '10px 0',
-              textDecoration: 'none',
-              fontWeight: 600,
-            }}
+            className="vr-site-header__drawer-download"
           >
             {m.header.download}
           </a>
         </nav>
       )}
-
-      <style>{`
-        @media (max-width: 768px) {
-          nav[role="navigation"] { display: none !important; }
-          .vr-mobile-menu-btn   { display: flex !important; }
-        }
-      `}</style>
     </header>
   )
 }
