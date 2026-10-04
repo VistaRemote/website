@@ -1,21 +1,18 @@
 import type { Metadata, Viewport } from 'next'
+import {
+  buildRootMetadata,
+  buildWebsiteJsonLd,
+} from '@/lib/seo'
 import './globals.css'
 
-export const metadata: Metadata = {
-  title: 'VistaRemote 视界远程 — 开源 WebRTC 远程桌面 · 私有化 AI 洞察',
-  description:
-    '跨平台实时远程桌面控制。会话录制、AI 摘要、审计日志 — 开源可私有化。适配工控机、边缘网关、IT 桌面。',
-  icons: {
-    icon: [
-      { url: '/icon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.png', type: 'image/png', sizes: '32x32' },
-    ],
-    apple: '/apple-icon.png',
-  },
-}
+export const metadata: Metadata = buildRootMetadata()
 
 export const viewport: Viewport = {
-  themeColor: '#0d1117',
+  themeColor: [
+    { media: '(prefers-color-scheme: dark)', color: '#0d1117' },
+    { media: '(prefers-color-scheme: light)', color: '#0d1117' },
+  ],
+  colorScheme: 'dark',
 }
 
 export default function RootLayout({
@@ -23,9 +20,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const jsonLd = buildWebsiteJsonLd()
+
   return (
     <html lang="zh-CN" suppressHydrationWarning>
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   )
 }
