@@ -8,6 +8,7 @@ export type Locale =
   | 'it'
   | 'ja'
   | 'ko'
+  | 'fr'
 
 export const LOCALES: Locale[] = [
   'en',
@@ -19,9 +20,10 @@ export const LOCALES: Locale[] = [
   'it',
   'ja',
   'ko',
+  'fr',
 ]
 
-export const DEFAULT_LOCALE: Locale = 'zh-CN'
+export const DEFAULT_LOCALE: Locale = 'en'
 
 export interface ScenarioCard {
   title: string

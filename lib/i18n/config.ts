@@ -7,7 +7,9 @@ import nlNL from 'antd/locale/nl_NL'
 import itIT from 'antd/locale/it_IT'
 import jaJP from 'antd/locale/ja_JP'
 import koKR from 'antd/locale/ko_KR'
+import frFR from 'antd/locale/fr_FR'
 import type { Locale } from './types'
+import { detectClientPreferredLocale } from './preferred-locale'
 
 export interface LocaleConfig {
   code: Locale
@@ -81,6 +83,13 @@ export const LOCALE_CONFIG: Record<Locale, LocaleConfig> = {
     htmlLang: 'ko',
     antd: koKR,
   },
+  fr: {
+    code: 'fr',
+    label: 'Français',
+    short: 'FR',
+    htmlLang: 'fr',
+    antd: frFR,
+  },
 }
 
 export const LOCALE_MENU = (Object.values(LOCALE_CONFIG) as LocaleConfig[]).map(
@@ -102,23 +111,7 @@ export function loadStoredLocale(): Locale | null {
 /** Map navigator.language to supported locale (first visit, no stored preference). */
 export function detectBrowserLocale(): Locale | null {
   if (typeof navigator === 'undefined') return null
-  const langs = navigator.languages?.length
-    ? [...navigator.languages]
-    : [navigator.language]
-
-  for (const raw of langs) {
-    const tag = raw.toLowerCase()
-    if (tag.startsWith('zh-tw') || tag.startsWith('zh-hk') || tag === 'zh-hant') return 'zh-TW'
-    if (tag.startsWith('zh')) return 'zh-CN'
-    if (tag.startsWith('es')) return 'es'
-    if (tag.startsWith('pt')) return 'pt'
-    if (tag.startsWith('nl')) return 'nl'
-    if (tag.startsWith('it')) return 'it'
-    if (tag.startsWith('ja')) return 'ja'
-    if (tag.startsWith('ko')) return 'ko'
-    if (tag.startsWith('en')) return 'en'
-  }
-  return null
+  return detectClientPreferredLocale(null) as Locale
 }
 
 export function storeLocale(locale: Locale): void {
