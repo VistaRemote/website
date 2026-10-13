@@ -21,7 +21,7 @@ const NAV_KEYS = [
   'ecosystem',
   'docs',
 ] as const
-const loginUrl = 'https://admin.vistacast.dev/'
+const loginUrl = 'https://remote-app.vistacast.dev/login'
 const DOCS_URL = 'https://docs.remote.vistacast.dev'
 
 const navBtnStyle: CSSProperties = {
